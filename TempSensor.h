@@ -24,6 +24,11 @@
 class TempSensor : public I2C_device
 {
 public:
+	enum mode {
+		COMPARATOR,	/**< Comparator mode	*/
+		INTERRUPT,	/**< Interrupt mode	*/
+	};
+
 	/** A virtual method to define class fundamental feature
 	 */
 	TempSensor( I2C &i2c_, char i2c_address );
@@ -49,10 +54,6 @@ public:
 		Conf,	/**< Conf register	*/
 		Thyst,	/**< Thyst register	*/
 		Tos,	/**< Tos registe	*/
-	};
-	enum mode {
-		COMPARATOR,	/**< Comparator mode	*/
-		INTERRUPT,	/**< Interrupt mode	*/
 	};
 
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
@@ -107,11 +108,6 @@ public:
 		Tos,	/**< Tos registe	*/
 		Tidle,	/**< Tidle register	*/
 	};
-	enum mode {
-		COMPARATOR,	/**< Comparator mode	*/
-		INTERRUPT,	/**< Interrupt mode	*/
-	};
-
     /** Create a PCT2075 instance connected to specified I2C pins with specified address
      *
      * @param i2c_address I2C-bus address (default: (0x90>>1))
@@ -121,28 +117,31 @@ public:
     /** Destructor of PCT2075
      */
     ~PCT2075();
-	
-    /** Get temperature value in degree Celsius [°C] 
-     *
-     * @return temperature value in degree Celsius [°C] 
-     */
+
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
 	float temp( void );
 	
-    /** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
-     *
-     *	This method takes 2 values and higher value will set as the threshold (Tos) and 
-     *. another will be the hysteresis (Thyst)
-     *
-     * @param v0 a value in degree Celsius
-     * @param v1 a value in degree Celsius
-     */	
+	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
+	 *
+	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
+	 *. another will be the hysteresis (Thyst)
+	 *
+	 * @param v0 a value in degree Celsius
+	 * @param v1 a value in degree Celsius
+	 */	
 	void thresholds( float v0, float v1 );
 
-    /** Set OS operation mode 
-     *
-     * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
-     */	
+	/** Set OS operation mode 
+	 *
+	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 */	
 	void os_mode( mode flag );
+#endif
+	
 };
 
 #endif //	ARDUINO_TEMP_SENSOR_H
