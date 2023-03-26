@@ -1,7 +1,7 @@
 /** PCT2075 temperature sensor operation library for Arduino
  *
  *  @class   PCT2075
- *  @author  Akifumi (Tedd) OKANO, NXP Semiconductors
+ *  @author  Tedd OKANO
  *  @version 0.1
  *  @date    26-Mar-2023
  *
