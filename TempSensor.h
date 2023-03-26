@@ -13,6 +13,8 @@
 #include "src/lib_i2c/I2C.h"
 #include "src/lib_i2c/I2C_device.h"
 
+
+
 /** TempSensor class
  *	
  *  @class TempSensor
@@ -35,6 +37,7 @@ public:
 	virtual ~TempSensor();
 	virtual float temp( void );
 };
+
 
 
 /** LM75B class
@@ -88,6 +91,8 @@ public:
 	 */	
 	void os_mode( mode flag );
 };
+
+
 
 /** PCT2075 class
  *	
