@@ -21,7 +21,8 @@ const uint8_t heaterPin  = 3;
 uint8_t heater  = HIGH;
 
 I2C     i2c;
-PCT2075 sensor( i2c );
+//PCT2075 sensor( i2c );
+P3T1085 sensor( i2c );
 
 void setup() {
   Serial.begin(115200);
@@ -51,5 +52,5 @@ void loop() {
   Serial.println( sensor.temp() );
  
   digitalWrite( heaterPin, heater );
-  delay(1000);
+  delay( 1000 );
 }
