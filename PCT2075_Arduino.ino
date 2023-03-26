@@ -36,7 +36,8 @@ void setup() {
   sensor.thresholds( temp + 1, temp + 2 );
   sensor.os_mode( PCT2075::INTERRUPT );
 
-  Serial.println( "READY" );
+  Serial.print( "Temperature at start: " );
+  Serial.println( temp );
 }
 
 void callback() {
