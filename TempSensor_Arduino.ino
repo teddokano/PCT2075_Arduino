@@ -14,7 +14,7 @@
  */
 
 
-#include "PCT2075.h"
+#include "TempSensor.h"
 
 const uint8_t interruptPin  = 2;
 const uint8_t heaterPin  = 3;

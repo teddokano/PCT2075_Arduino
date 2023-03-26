@@ -1,4 +1,4 @@
-#include "PCT2075.h"
+#include "TempSensor.h"
 
 PCT2075::PCT2075( I2C &i2c_, char i2c_address ) : I2C_device( i2c_, i2c_address )
 {
