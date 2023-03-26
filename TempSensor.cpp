@@ -1,6 +1,18 @@
 #include "TempSensor.h"
 
-PCT2075::PCT2075( I2C &i2c_, char i2c_address ) : I2C_device( i2c_, i2c_address )
+TempSensor::TempSensor( I2C &i2c_, char i2c_address ) : I2C_device( i2c_, i2c_address )
+{
+	//  do nothing.
+	//  leave it in default state.
+}
+
+TempSensor::~TempSensor()
+{
+}
+
+
+
+PCT2075::PCT2075( I2C &i2c_, char i2c_address ) : TempSensor( i2c_, i2c_address )
 {
 	//  do nothing.
 	//  leave it in default state.

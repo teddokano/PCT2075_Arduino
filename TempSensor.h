@@ -1,23 +1,45 @@
-/** PCT2075 temperature sensor operation library for Arduino
+/** TempSensor operation library for Arduino
  *
- *  @class   PCT2075
  *  @author  Tedd OKANO
  *  @version 0.1
  *  @date    26-Mar-2023
  *
  *  Released under the MIT license License
- *
- *  About PCT2075:
- *    https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075
  */
 
-#ifndef ARDUINO_PCT2075_H
-#define ARDUINO_PCT2075_H
+#ifndef ARDUINO_TEMP_SENSOR_H
+#define ARDUINO_TEMP_SENSOR_H
 
 #include "src/lib_i2c/I2C.h"
 #include "src/lib_i2c/I2C_device.h"
 
-class PCT2075 : public I2C_device
+/** TempSensor class
+ *	
+ *  @class TempSensor
+ *
+ *	TempSensor class is a base class for all temperature sensors
+ *	All actual device class will be inherited from this class
+ */
+
+class TempSensor : public I2C_device
+{
+public:
+	/** A virtual method to define class fundamental feature
+	 */
+	TempSensor( I2C &i2c_, char i2c_address );
+	virtual ~TempSensor();
+	virtual float temp( void );
+};
+
+/** TempSensor class
+ *	
+ *  @class PCT2075
+
+ *  About PCT2075:
+ *    https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075
+ */
+
+class PCT2075 : public TempSensor
 {
 public:
 	/** Name of the PCT2075 registers */
@@ -47,7 +69,7 @@ public:
      *
      * @return temperature value in degree Celsius [°C] 
      */
-	float		temp( void );
+	float temp( void );
 	
     /** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
      *
@@ -57,13 +79,13 @@ public:
      * @param v0 a value in degree Celsius
      * @param v1 a value in degree Celsius
      */	
-	void		thresholds( float v0, float v1 );
+	void thresholds( float v0, float v1 );
 
     /** Set OS operation mode 
      *
      * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
      */	
-	void		os_mode( mode flag );
+	void os_mode( mode flag );
 };
 
-#endif //	ARDUINO_PCT2075_H
+#endif //	ARDUINO_TEMP_SENSOR_H
