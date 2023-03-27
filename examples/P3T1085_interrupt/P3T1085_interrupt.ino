@@ -21,12 +21,12 @@
 #include <TempSensor.h>
 #include <MsTimer2.h>
 
+I2C i2c;
+P3T1085 sensor(i2c);
+
 const uint8_t interruptPin = 2;
 bool int_flag = false;
 bool tim_flag = false;
-
-I2C i2c;
-P3T1085 sensor(i2c);
 
 void setup() {
   Serial.begin(115200);

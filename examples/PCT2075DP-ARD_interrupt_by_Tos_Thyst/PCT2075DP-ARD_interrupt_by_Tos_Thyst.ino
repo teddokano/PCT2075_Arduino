@@ -18,13 +18,13 @@
 
 #include <TempSensor.h>
 
+I2C i2c;
+PCT2075 sensor(i2c);
+
 const uint8_t interruptPin = 2;
 const uint8_t heaterPin = 3;
 bool heater = true;
 bool int_flag = false;
-
-I2C i2c;
-PCT2075 sensor(i2c);
 
 void setup() {
   Serial.begin(115200);
