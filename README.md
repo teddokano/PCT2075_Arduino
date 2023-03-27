@@ -37,9 +37,9 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 
 # Getting started
 ## 3 steps to start
-**STEP 1**: Get a **.zip file** by downloading  
-**STEP 2**: Adding the **library into your Arduino IDE**, follow instruction of **Importing a .zip Library** part of [Add libraries to Arduino IDE](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
-**STEP 3**: Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
+- **STEP 1**: Get a **.zip file** by downloading  
+- **STEP 2**: Adding the **library into your Arduino IDE**, follow instruction of **Importing a .zip Library** part of [Add libraries to Arduino IDE](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
+- **STEP 3**: Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
 
 ## How the steps can be done (STEP 1 and 3)
 _STEP 1: **Downloading a .zip file**_  
