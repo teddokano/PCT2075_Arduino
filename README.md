@@ -1,9 +1,11 @@
 # TempSensor_NXP_Arduino
-Temperature sensor device operation sample with Arduino
+Temperature sensor device operation sample code for [Arduino](https://www.arduino.cc) 
+
+_**P3T1085UK-ARD and PCT2075DP-ARD : Arduino® Shield Evaluation Board for temperature sensors**_
 ![Boards](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/TempSensors.jpg)  
 
 # What is this?
-A Arduino library for I²C temperature sensors with sample code.  
+An Arduino library for I²C temperature sensors with sample code.  
 The I²C temperature sensors can measure temoperature and output comparator or interrupt signals by threshold settings. 
 
 With `TempSensor_NXP_Arduino` library, the temperature measurement and showing it in Celsius can be done very simple as follwoing. 
@@ -34,16 +36,39 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 [P3T1085](https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK)								|I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1085UK Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD?_gl=1*up6muo*_ga*NTA5NDE1NDA0LjE2NzgzNDYyNzA.*_ga_WM5LE0KMSH*MTY3OTk0MzEzOS4yMS4xLjE2Nzk5NDQ1NjMuMC4wLjA.)
 
 # Getting started
+## 3 steps to start
+**STEP 1**: Get a **.zip file** by downloading  
+**STEP 2**: Adding the **library into your Arduino IDE**, follow instruction of **Importing a .zip Library** part of [Add libraries to Arduino IDE](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
+**STEP 3**: Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
 
-1. Get a .zip file by downloading
-1. Adding the library into your Arduino IDE, follow instruction of **Importing a .zip Library** part of [Add libraries to Arduino IDE](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE). 
-1. Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)
-
-_Downloading a .zip file_  
+## How the steps can be done (STEP 1 and 3)
+_STEP 1: **Downloading a .zip file**_  
 ![Download](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/download.png)
 
-_Choosing an example file after library import_  
+_STEP 3: **Choosing an example file after library import**_  
 ![Choosing an example](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/examples.png)
+
+# What's inside?
+## Temperature sensor library
+`LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  
+Those libraries have common methods to get/set device information.
+
+Method|Role
+---|---
+temp()					|Get temperature in Celsius
+thresholds( v0, v1 )	|Set high and low temperature threshold for OS output. `v0` and `v1` are needed to be given by Celsius value. Order of the arguments doesn't care
+os_mode( mode )			|Set OS pin mode. It can be set comparator or interrupt mode. The argument needs to be given as a class constant like `PCT2075::COMPARATOR` or `PCT2075::INTERRUPT`. The class name can be `LM75B`, `PCT2075`, `P3T1085` or a generic name of `TempSensor`.
+
+## Examples
+Example code is provided as scketch files.  
+For a quick access to those sketch, **refer to STEP 3** of **"Getting started" section** of this document. 
+
+Sketch|Feature
+---|---
+PCT2075_simple							|Simple sample for just reading temperature fro PCT2075 in every second
+PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thresholds +2℃ and +1℃ of temperature when starting. The sketch controls **on-board heater** to keep the temperature withon those thresholds.
+P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
+P3T1085_interrupt						|Demo for interrupt behavior. On the **P3T1085UK-ARD evaluation board**, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D8 and D2 pins**. 
 
 # References
 [I²C Digital Temperature Sensors](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors:MC_31128)
