@@ -97,8 +97,8 @@ void P3T1085::os_mode( mode flag )
 	write_r16( Conf, v );
 }
 
-void P3T1085::clear( void )
+bool P3T1085::clear( void )
 {
-	read_r16( Conf );
+	return (read_r16( Conf ) & 0x1000) ? true : false;
 }
 

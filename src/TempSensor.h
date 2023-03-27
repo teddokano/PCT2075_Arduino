@@ -10,8 +10,8 @@
 #ifndef ARDUINO_TEMP_SENSOR_H
 #define ARDUINO_TEMP_SENSOR_H
 
-#include "src/lib_i2c/I2C.h"
-#include "src/lib_i2c/I2C_device.h"
+#include "lib_i2c/I2C.h"
+#include "lib_i2c/I2C_device.h"
 
 
 
@@ -203,10 +203,11 @@ public:
 	void os_mode( mode flag );
 
 	/** Clear ALERT (Clear interurpt)
+	 * 
+	 * @return true if FH flag in Congiguration register is set 
 	 */	
-	void clear( void );
+	bool clear( void );
 };
-
 
 
 #endif //	ARDUINO_TEMP_SENSOR_H
