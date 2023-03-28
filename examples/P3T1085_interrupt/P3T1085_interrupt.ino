@@ -45,9 +45,9 @@ void setup() {
   Serial.println(temp);
 
   Serial.print("Setting: Tos = ");
-  Serial.print(temp + 2);
+  Serial.print(temp + 2, 4);
   Serial.print(" / Thyst = ");
-  Serial.println(temp + 1);
+  Serial.println(temp + 1, 4);
 
   MsTimer2::set(1000, timer_callback);
   MsTimer2::start();
@@ -67,7 +67,7 @@ void loop() {
 
   if (tim_flag) {
     tim_flag = false;
-    Serial.println(sensor.temp());
+    Serial.println(sensor.temp(), 4);
   }
 
   if (int_flag) {

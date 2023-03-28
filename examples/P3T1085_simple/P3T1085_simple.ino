@@ -26,6 +26,6 @@ void setup() {
 void loop() {
   float t = sensor.temp();
 
-  Serial.println(t);
+  Serial.println(t, 4);
   delay(1000);
 }

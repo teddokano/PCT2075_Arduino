@@ -44,9 +44,9 @@ void setup() {
   Serial.println(temp);
 
   Serial.print("Setting: Tos = ");
-  Serial.print(temp + 2);
+  Serial.print(temp + 2, 3);
   Serial.print(" / Thyst = ");
-  Serial.println(temp + 1);
+  Serial.println(temp + 1, 3);
 
   digitalWrite(heaterPin, heater);
 }
@@ -58,7 +58,7 @@ void callback() {
 void loop() {
   Serial.print("heater: ");
   Serial.print(heater ? "ON   " : "OFF  ");
-  Serial.println(sensor.temp());
+  Serial.println(sensor.temp(), 3);
 
   if (int_flag) {
     int_flag = false;
