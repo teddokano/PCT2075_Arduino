@@ -1,9 +1,8 @@
 #include "TempSensor.h"
-#include "Arduino.h"
 
 /* TempSensor class ******************************************/
 
-TempSensor::TempSensor( I2C &i2c_, char i2c_address ) : I2C_device( i2c_, i2c_address )
+TempSensor::TempSensor( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -15,7 +14,7 @@ TempSensor::~TempSensor()
 
 /* LM75B class ******************************************/
 
-LM75B::LM75B( I2C &i2c_, char i2c_address ) : TempSensor( i2c_, i2c_address )
+LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -41,7 +40,7 @@ void LM75B::thresholds( float v0, float v1 )
 
 void LM75B::os_mode( mode flag )
 {
-	uint16_t	v;
+	uint8_t	v;
 	
 	v	 = read_r8( Conf );
 	v	&= ~0x02;
@@ -52,7 +51,7 @@ void LM75B::os_mode( mode flag )
 
 
 /* PCT2075 class ******************************************/
-PCT2075::PCT2075( I2C &i2c_, char i2c_address ) : LM75B( i2c_, i2c_address )
+PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address )
 {
 	//  do nothing.
 	//  leave it in default state.
@@ -64,7 +63,7 @@ PCT2075::~PCT2075()
 
 /* P3T1085 class ******************************************/
 
-P3T1085::P3T1085( I2C &i2c_, char i2c_address ) : LM75B( i2c_, i2c_address )
+P3T1085::P3T1085( uint8_t i2c_address ) : LM75B( i2c_address )
 {
 	//  do nothing.
 	//  leave it in default state.

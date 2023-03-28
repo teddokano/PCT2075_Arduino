@@ -4,8 +4,8 @@
  *  "Tos" and "Thyst" are set to generate interrupt.   
  *
  *  @author  Tedd OKANO
- *  @version 0.1
- *  @date    26-Mar-2023
+ *  @version 0.2
+ *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *
@@ -16,11 +16,11 @@
 
 #include <TempSensor.h>
 
-I2C i2c;
-PCT2075 sensor(i2c);
+PCT2075 sensor;
 
 void setup() {
-  Serial.begin(115200);
+  Wire.begin();
+  Serial.begin(9600);
   Serial.println("\r***** Hello, PCT2075! *****");
 }
 

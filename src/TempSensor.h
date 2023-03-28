@@ -1,8 +1,8 @@
 /** TempSensor operation library for Arduino
  *
  *  @author  Tedd OKANO
- *  @version 0.1
- *  @date    26-Mar-2023
+ *  @version 0.2
+ *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  */
@@ -10,10 +10,10 @@
 #ifndef ARDUINO_TEMP_SENSOR_H
 #define ARDUINO_TEMP_SENSOR_H
 
-#include "lib_i2c/I2C.h"
-#include "lib_i2c/I2C_device.h"
+#include <Arduino.h>
+#include <stdint.h>
 
-
+#include "I2C_device.h"
 
 /** TempSensor class
  *	
@@ -33,7 +33,7 @@ public:
 
 	/** A virtual method to define class fundamental feature
 	 */
-	TempSensor( I2C &i2c_, char i2c_address );
+	TempSensor( uint8_t i2c_address );
 	virtual ~TempSensor();
 	virtual float temp( void );
 };
@@ -63,7 +63,7 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	LM75B( I2C &i2c_, char i2c_address = (0x90 >> 1) );
+	LM75B( uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */
@@ -117,7 +117,7 @@ public:
      *
      * @param i2c_address I2C-bus address (default: (0x90>>1))
      */
-    PCT2075( I2C &i2c_, char i2c_address = (0x90 >> 1) );
+    PCT2075( uint8_t i2c_address = (0x90 >> 1) );
 
     /** Destructor of PCT2075
      */
@@ -172,7 +172,7 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	P3T1085( I2C &i2c_, char i2c_address = (0x90 >> 1) );
+	P3T1085( uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */

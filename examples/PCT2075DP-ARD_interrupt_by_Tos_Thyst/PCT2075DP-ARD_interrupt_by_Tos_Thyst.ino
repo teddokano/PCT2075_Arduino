@@ -7,8 +7,8 @@
  *        The board has interrupt pin on D2 and heater control on D3 of Arduino Shield connector. 
  *
  *  @author  Tedd OKANO
- *  @version 0.1
- *  @date    26-Mar-2023
+ *  @version 0.2
+ *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *
@@ -18,8 +18,7 @@
 
 #include <TempSensor.h>
 
-I2C i2c;
-PCT2075 sensor(i2c);
+PCT2075 sensor;
 
 const uint8_t interruptPin = 2;
 const uint8_t heaterPin = 3;
@@ -27,7 +26,8 @@ bool heater = true;
 bool int_flag = false;
 
 void setup() {
-  Serial.begin(115200);
+  Wire.begin();
+  Serial.begin(9600);
 
   pinMode(heaterPin, OUTPUT);
 

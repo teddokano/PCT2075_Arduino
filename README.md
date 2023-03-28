@@ -1,8 +1,11 @@
 # TempSensor_NXP_Arduino
 Temperature sensor device operation sample code for [Arduino](https://www.arduino.cc) 
 
-_**P3T1085UK-ARD and PCT2075DP-ARD : Arduino® Shield Evaluation Board for temperature sensors**_
+> **Note**
+This library works with [`I2C_device`](https://github.com/teddokano/I2C_device_Arduino) library together. Please be sure the `I2C_device` library is imported in your environment before trying to build. 
+
 ![Boards](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/TempSensors.jpg)  
+_P3T1085UK-ARD and PCT2075DP-ARD : Arduino® Shield Evaluation Board for temperature sensors_
 
 # What is this?
 An Arduino library for I²C temperature sensors with sample code.  
@@ -12,11 +15,11 @@ With `TempSensor_NXP_Arduino` library, the temperature measurement and showing i
 ```cpp
 #include <TempSensor.h>
 
-I2C i2c;
-PCT2075 sensor(i2c);
+PCT2075 sensor;
 
 void setup() {
-  Serial.begin(115200);
+  Wire.begin();
+  Serial.begin(9600);
   Serial.println("\r***** Hello, PCT2075! *****");
 }
 

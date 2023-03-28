@@ -9,8 +9,8 @@
  *  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector. 
  *
  *  @author  Tedd OKANO
- *  @version 0.1
- *  @date    27-Mar-2023
+ *  @version 0.2
+ *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *
@@ -21,15 +21,15 @@
 #include <TempSensor.h>
 #include <MsTimer2.h>
 
-I2C i2c;
-P3T1085 sensor(i2c);
+P3T1085 sensor;
 
 const uint8_t interruptPin = 2;
 bool int_flag = false;
 bool tim_flag = false;
 
 void setup() {
-  Serial.begin(115200);
+  Wire.begin();
+  Serial.begin(9600);
 
   pinMode(interruptPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(interruptPin), pin_int_callback, FALLING);
