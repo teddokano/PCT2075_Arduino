@@ -49,14 +49,6 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 - **STEP 3**: Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
 ![Choosing an example](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/examples.png)  
 
-
-## How the steps can be done (STEP 1 and 3)
-_STEP 1: **Downloading a .zip file**_  
-
-_STEP 2: **Import the .zip file**_  
-
-_STEP 3: **Choosing an example file after library import**_  
-
 # What's inside?
 ## Temperature sensor library
 `LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  

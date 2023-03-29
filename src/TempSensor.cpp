@@ -40,13 +40,7 @@ void LM75B::thresholds( float v0, float v1 )
 
 void LM75B::os_mode( mode flag )
 {
-	uint8_t	v;
-	
-	v	 = read_r8( Conf );
-	v	&= ~0x02;
-	v	|= flag << 1;
-	
-	write_r8( Conf, v );
+	bit_op8( Conf, ~0x02, flag << 1 );
 }
 
 
@@ -80,20 +74,11 @@ void P3T1085::thresholds( float v0, float v1 )
 	
 	write_r16( T_HIGH, ((uint16_t)(higher * 256.0)) & 0xFFF0 );
 	write_r16( T_LOW,  ((uint16_t)(lower  * 256.0)) & 0xFFF0 );
-
-	Serial.println( read_r16( T_HIGH ) / 256.0 );
-	Serial.println( read_r16( T_LOW  ) / 256.0 );
 }
 
 void P3T1085::os_mode( mode flag )
 {
-	uint16_t	v;
-	
-	v	 = read_r16( Conf );
-	v	&= ~0x0400;
-	v	|= flag << 10;
-	
-	write_r16( Conf, v );
+	bit_op16( Conf, ~0x0400, flag << 10 );
 }
 
 bool P3T1085::clear( void )
