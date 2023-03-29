@@ -71,5 +71,8 @@ PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thr
 P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
 P3T1085_interrupt						|Demo for interrupt behavior. On the **P3T1085UK-ARD evaluation board**, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D8 and D2 pins**. 
 
+# Document
+For details of the library, please find descriptions in [this document](https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html).
+
 # References
 [I²C Digital Temperature Sensors](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors:MC_31128)
