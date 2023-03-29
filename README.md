@@ -39,6 +39,21 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 [P3T1085](https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK)								|I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1085UK Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD?_gl=1*up6muo*_ga*NTA5NDE1NDA0LjE2NzgzNDYyNzA.*_ga_WM5LE0KMSH*MTY3OTk0MzEzOS4yMS4xLjE2Nzk5NDQ1NjMuMC4wLjA.)
 
 # Getting started
+## Install and run
+Use **Library manager** in Arduino IDE for easy install
+- **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library and click **INSTALL** button. 
+![Find the lib](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install0.png)
+
+- Click **"INSTALL ALL"**
+![Install all](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install1.png)
+
+- Install will be completed quickly
+![Install completed](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install2.png)
+
+- Choose a sample code and try!
+![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3.png)
+
+<!--
 ## 3 steps to start
 - **STEP 1**: Get a **.zip file** by "Download ZIP" in this page  
 ![Download](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/download.png)  
@@ -48,7 +63,7 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 
 - **STEP 3**: Try **Using installed libraries** part of [same guide page above](https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE)  
 ![Choosing an example](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/examples.png)  
-
+-->
 # What's inside?
 ## Temperature sensor library
 `LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  
