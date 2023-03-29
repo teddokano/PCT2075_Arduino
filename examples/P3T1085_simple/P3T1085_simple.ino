@@ -4,8 +4,6 @@
  *  "Tos" and "Thyst" are set to generate interrupt.   
  *
  *  @author  Tedd OKANO
- *  @version 0.2
- *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *

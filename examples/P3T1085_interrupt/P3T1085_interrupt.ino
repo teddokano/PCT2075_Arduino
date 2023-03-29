@@ -9,8 +9,6 @@
  *  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector. 
  *
  *  @author  Tedd OKANO
- *  @version 0.2
- *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *

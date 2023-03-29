@@ -7,8 +7,6 @@
  *        The board has interrupt pin on D2 and heater control on D3 of Arduino Shield connector. 
  *
  *  @author  Tedd OKANO
- *  @version 0.2
- *  @date    29-Mar-2023
  *
  *  Released under the MIT license License
  *

@@ -1,8 +1,7 @@
 /** TempSensor operation library for Arduino
  *
- *  @author  Tedd OKANO
- *  @version 0.2
- *  @date    29-Mar-2023
+ *  @class  TempSensor
+ *  @author Tedd OKANO
  *
  *  Released under the MIT license License
  */
