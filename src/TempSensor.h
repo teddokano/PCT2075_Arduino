@@ -34,7 +34,7 @@ public:
 	 */
 	TempSensor( uint8_t i2c_address );
 	virtual ~TempSensor();
-	virtual float temp( void );
+	virtual float temp( void )	= 0;
 };
 
 

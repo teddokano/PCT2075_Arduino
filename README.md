@@ -41,17 +41,17 @@ Type#|Features|Accuracy|Resolution|Interface|Evaluation board
 # Getting started
 ## Install and run
 Use **Library manager** in Arduino IDE for easy install
-- **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library and click **INSTALL** button. 
-![Find the lib](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install0.png)
+- **Find** this library: **Open** the _**Library Manager**_ pane, **Search** this library and click **INSTALL** button.  
+![Find the lib](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install0s.png)
 
-- Click **"INSTALL ALL"**
-![Install all](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install1.png)
+- Click **"INSTALL ALL"**  
+![Install all](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install1s.png)
 
-- Install will be completed quickly
-![Install completed](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install2.png)
+- Install will be completed quickly  
+![Install completed](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install2s.png)
 
-- Choose a sample code and try!
-![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3.png)
+- Choose a sample code and try!  
+![Choosing a sample code](https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3s.png)
 
 <!--
 ## 3 steps to start
