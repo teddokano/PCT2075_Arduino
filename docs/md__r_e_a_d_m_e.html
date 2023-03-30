@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.2.3</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -101,8 +101,8 @@ What is this?</h1>
 <div class="line">  delay(1000);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_temp_sensor_8h_html"><div class="ttname"><a href="_temp_sensor_8h.html">TempSensor.h</a></div></div>
-<div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">float temp(void)</div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8cpp_source.html#l00027">TempSensor.cpp:27</a></div></div>
-<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8h_source.html#l00105">TempSensor.h:106</a></div></div>
+<div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">virtual float temp(void)</div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8cpp_source.html#l00032">TempSensor.cpp:32</a></div></div>
+<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8h_source.html#l00113">TempSensor.h:114</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 Supported devices</h1>
 <table class="markdownTable">
@@ -118,21 +118,20 @@ Supported devices</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Getting started</h1>
 <h2><a class="anchor" id="autotoc_md4"></a>
-3 steps to start</h2>
-<ul>
-<li><b>STEP 1</b>: Get a **.zip file** by "Download ZIP" in this page <br  />
- <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/download.png" alt="Download" class="inline"/> <br  />
-</li>
-<li><b>STEP 2</b>: Adding the <b>library into your Arduino IDE</b>, follow instruction of <b>Importing a .zip Library</b> part of <a href="https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE">Add libraries to Arduino IDE</a> <br  />
- <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/add_zip.png" alt="AddingZip" class="inline"/> <br  />
-</li>
-<li><b>STEP 3</b>: Try <b>Using installed libraries</b> part of <a href="https://support.arduino.cc/hc/en-us/articles/5145457742236-Add-libraries-to-Arduino-IDE">same guide page above</a> <br  />
- <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/examples.png" alt="Choosing an example" class="inline"/> <br  />
-</li>
+Install and run</h2>
+<p>Use <b>Library manager</b> in Arduino IDE for easy install</p><ul>
+<li><b>Find</b> this library: <b>Open</b> the <em><b>Library Manager</b></em> pane, <b>Search</b> this library and click <b>INSTALL</b> button. <br  />
+ <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install0s.png" alt="Find the lib" class="inline"/></li>
+<li>Click **"INSTALL ALL"** <br  />
+ <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install1s.png" alt="Install all" class="inline"/></li>
+<li>Install will be completed quickly <br  />
+ <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install2s.png" alt="Install completed" class="inline"/></li>
+<li>Choose a sample code and try! <br  />
+ <img src="https://github.com/teddokano/additional_files/blob/main/TempSensor_NXP_Arduino/LM_install3s.png" alt="Choosing a sample code" class="inline"/></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 What's inside?</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Temperature sensor library</h2>
 <p><code><a class="el" href="class_l_m75_b.html">LM75B</a></code>, <code><a class="el" href="class_p_c_t2075.html">PCT2075</a></code> and <code><a class="el" href="class_p3_t1085.html">P3T1085</a></code> class libraries are included. Those libraries can be used by just making an instance from those class. <br  />
  Those libraries have common methods to get/set device information.</p>
@@ -146,7 +145,7 @@ Temperature sensor library</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">os_mode( mode )   </td><td class="markdownTableBodyNone">Set OS pin mode. It can be set comparator or interrupt mode. The argument needs to be given as a class constant like <code><a class="el" href="class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69ab4199759877d837f231fb22a03860279">PCT2075::COMPARATOR</a></code> or <code><a class="el" href="class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69a9285a209072a37c7ce5c6dc0530bc72e">PCT2075::INTERRUPT</a></code>. The class name can be <code><a class="el" href="class_l_m75_b.html">LM75B</a></code>, <code><a class="el" href="class_p_c_t2075.html">PCT2075</a></code>, <code><a class="el" href="class_p3_t1085.html">P3T1085</a></code> or a generic name of <code><a class="el" href="class_temp_sensor.html">TempSensor</a></code>.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Examples</h2>
 <p>Example code is provided as scketch files. <br  />
  For a quick access to those sketch, <b>refer to STEP 3</b> of **"Getting started" section** of this document.</p>
@@ -162,7 +161,10 @@ Examples</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">P3T1085_interrupt   </td><td class="markdownTableBodyNone">Demo for interrupt behavior. On the <b>P3T1085UK-ARD evaluation board</b>, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, <b>short D8 and D2 pins</b>.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Document</h1>
+<p>For details of the library, please find descriptions in <a href="https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html">this document</a>.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
 References</h1>
 <p><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors:MC_31128">I²C Digital Temperature Sensors</a> </p>
 </div></div><!-- contents -->
