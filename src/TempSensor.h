@@ -30,11 +30,13 @@ public:
 		INTERRUPT,	/**< Interrupt mode	*/
 	};
 
-	/** A virtual method to define class fundamental feature
+	/*
+	 *	Methods to define class fundamental features, overridden by sub-classes
 	 */
 	TempSensor( uint8_t i2c_address );
 	virtual ~TempSensor();
 	virtual float temp( void )	= 0;
+	virtual float read( void );
 };
 
 

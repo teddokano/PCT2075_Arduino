@@ -12,6 +12,11 @@ TempSensor::~TempSensor()
 {
 }
 
+float TempSensor::read()
+{
+	return temp();
+}
+
 /* LM75B class ******************************************/
 
 LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address )
