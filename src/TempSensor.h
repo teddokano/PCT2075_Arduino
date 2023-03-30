@@ -36,6 +36,13 @@ public:
 	TempSensor( uint8_t i2c_address );
 	virtual ~TempSensor();
 	virtual float temp( void )	= 0;
+	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
 	virtual float read( void );
 };
 
