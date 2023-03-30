@@ -6,7 +6,7 @@
  *  
  *  
  *  NOTE: To run this sample code, a timer library "MsTimer2" is needed to be installed
- *  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector. 
+ *  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector
  *
  *  @author  Tedd OKANO
  *
@@ -37,6 +37,10 @@ void setup() {
   sensor.clear();
   sensor.thresholds(temp + 1, temp + 2);
   sensor.os_mode(P3T1085::INTERRUPT);
+
+  Serial.println("");
+  Serial.println("*  NOTE: To run this sample code, a timer library \"MsTimer2\" is needed to be installed");
+  Serial.println("*  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector");
 
   Serial.println("\n***** Hello, P3T1085! *****");
   Serial.print("Temperature at start: ");
