@@ -66,13 +66,13 @@ public:
 
 	/** Destructor of PCT2075
 	 */
-	~LM75B();
+	virtual ~LM75B();
 	
 	/** Get temperature value in degree Celsius [°C] 
 	 *
 	 * @return temperature value in degree Celsius [°C] 
 	 */
-	float temp( void );
+	virtual float temp( void );
 	
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
 	 *
@@ -82,13 +82,13 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	void thresholds( float v0, float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	void os_mode( mode flag );
+	virtual void os_mode( mode flag );
 };
 
 
@@ -120,14 +120,14 @@ public:
 
     /** Destructor of PCT2075
      */
-    ~PCT2075();
+	virtual ~PCT2075();
 
 #if DOXYGEN_ONLY
 	/** Get temperature value in degree Celsius [°C] 
 	 *
 	 * @return temperature value in degree Celsius [°C] 
 	 */
-	float temp( void );
+	virtual float temp( void );
 	
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
 	 *
@@ -137,13 +137,13 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	void thresholds( float v0, float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	void os_mode( mode flag );
+	virtual void os_mode( mode flag );
 #endif
 };
 
@@ -175,14 +175,14 @@ public:
 
 	/** Destructor of PCT2075
 	 */
-	~P3T1085();
+	virtual ~P3T1085();
 
 #if DOXYGEN_ONLY
 	/** Get temperature value in degree Celsius [°C] 
 	 *
 	 * @return temperature value in degree Celsius [°C] 
 	 */
-	float temp( void );	
+	virtual float temp( void );	
 #endif
 	
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
@@ -193,19 +193,19 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	void thresholds( float v0, float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	void os_mode( mode flag );
+	virtual void os_mode( mode flag );
 
 	/** Clear ALERT (Clear interurpt)
 	 * 
 	 * @return true if FH flag in Congiguration register is set 
 	 */	
-	bool clear( void );
+	virtual bool clear( void );
 };
 
 
