@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.2.3</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.2.4</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -109,11 +109,11 @@ Supported devices</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Type#   </th><th class="markdownTableHeadNone">Features   </th><th class="markdownTableHeadNone">Accuracy   </th><th class="markdownTableHeadNone">Resolution   </th><th class="markdownTableHeadNone">Interface   </th><th class="markdownTableHeadNone">Evaluation board    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B">LM75B</a>   </td><td class="markdownTableBodyNone">An industrial standard Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±2℃   </td><td class="markdownTableBodyNone">0.125℃ (11bit)   </td><td class="markdownTableBodyNone">I²C Fast-mode (400KHz)   </td><td class="markdownTableBodyNone">&mdash;    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B">LM75B</a>   </td><td class="markdownTableBodyNone">An industrial standard Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±2℃   </td><td class="markdownTableBodyNone">0.125℃ (11bit)   </td><td class="markdownTableBodyNone">I²C Fast-mode (400KHz)   </td><td class="markdownTableBodyNone">&mdash;    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a href="https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075">PCT2075</a>   </td><td class="markdownTableBodyNone">I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±1℃   </td><td class="markdownTableBodyNone">0.125℃ (11bit)   </td><td class="markdownTableBodyNone">I²C Fast-mode Plus (1MHz)   </td><td class="markdownTableBodyNone"><a href="https://www.nxp.jp/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD">PCT2075DP-ARD Arduino® Shield - Temperature Sensors</a>    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075">PCT2075</a>   </td><td class="markdownTableBodyNone">I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±1℃   </td><td class="markdownTableBodyNone">0.125℃ (11bit)   </td><td class="markdownTableBodyNone">I²C Fast-mode Plus (1MHz)   </td><td class="markdownTableBodyNone"><a href="https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD">PCT2075DP-ARD Arduino® Shield - Temperature Sensors</a>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK">P3T1085</a>   </td><td class="markdownTableBodyNone">I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±0.5℃   </td><td class="markdownTableBodyNone">0.0625℃ (12bit)   </td><td class="markdownTableBodyNone">I3C / I²C Fast-mode (400KHz)   </td><td class="markdownTableBodyNone"><a href="https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD?_gl=1*up6muo*_ga*NTA5NDE1NDA0LjE2NzgzNDYyNzA.*_ga_WM5LE0KMSH*MTY3OTk0MzEzOS4yMS4xLjE2Nzk5NDQ1NjMuMC4wLjA.">P3T1085UK Arduino® Shield Evaluation Board</a>   </td></tr>
+<td class="markdownTableBodyNone"><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK">P3T1085</a>   </td><td class="markdownTableBodyNone">I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor   </td><td class="markdownTableBodyNone">±0.5℃   </td><td class="markdownTableBodyNone">0.0625℃ (12bit)   </td><td class="markdownTableBodyNone">I3C / I²C Fast-mode (400KHz)   </td><td class="markdownTableBodyNone"><a href="https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD">P3T1085UK Arduino® Shield Evaluation Board</a>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Getting started</h1>
@@ -141,14 +141,16 @@ Temperature sensor library</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">temp()   </td><td class="markdownTableBodyNone">Get temperature in Celsius    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">thresholds( v0, v1 )   </td><td class="markdownTableBodyNone">Set high and low temperature threshold for OS output. <code>v0</code> and <code>v1</code> are needed to be given by Celsius value. Order of the arguments doesn't care    </td></tr>
+<td class="markdownTableBodyNone">read()   </td><td class="markdownTableBodyNone">Get temperature in Celsius (same as <code>temp()</code>)    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">thresholds( v0, v1 )   </td><td class="markdownTableBodyNone">Set high and low temperature threshold for OS output. <code>v0</code> and <code>v1</code> are needed to be given by Celsius value. Order of the arguments doesn't care    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">os_mode( mode )   </td><td class="markdownTableBodyNone">Set OS pin mode. It can be set comparator or interrupt mode. The argument needs to be given as a class constant like <code><a class="el" href="class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69ab4199759877d837f231fb22a03860279">PCT2075::COMPARATOR</a></code> or <code><a class="el" href="class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69a9285a209072a37c7ce5c6dc0530bc72e">PCT2075::INTERRUPT</a></code>. The class name can be <code><a class="el" href="class_l_m75_b.html">LM75B</a></code>, <code><a class="el" href="class_p_c_t2075.html">PCT2075</a></code>, <code><a class="el" href="class_p3_t1085.html">P3T1085</a></code> or a generic name of <code><a class="el" href="class_temp_sensor.html">TempSensor</a></code>.   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Examples</h2>
 <p>Example code is provided as scketch files. <br  />
- For a quick access to those sketch, <b>refer to STEP 3</b> of **"Getting started" section** of this document.</p>
+ For a quick access to those sketch, <b>refer to last step</b> of **"Getting started" section** of this document.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Sketch   </th><th class="markdownTableHeadNone">Feature    </th></tr>
@@ -166,7 +168,16 @@ Document</h1>
 <p>For details of the library, please find descriptions in <a href="https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html">this document</a>.</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
 References</h1>
-<p><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors:MC_31128">I²C Digital Temperature Sensors</a> </p>
+<p><a href="https://www.nxp.com/products/sensors/ic-digital-temperature-sensors:MC_31128">I²C Digital Temperature Sensors</a></p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Related libraries</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Feature   </th><th class="markdownTableHeadNone">Target devices   </th><th class="markdownTableHeadNone">Required library    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LED driver libraries   </td><td class="markdownTableBodyNone">PCA9955B, PCA9956B, PCA9957   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>   </td></tr>
+</table>
+<p><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a> |RTC driver libraries |PCF2131, PCF85063A |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a> |RTC libraries |PCA9955B, PCA9956B, PCA9957 |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> <a href="https://github.com/teddokano/TempSensor_NXP_Arduino">TempSensor_NXP_Arduino</a> |Temperature sensor libraries |LM75B, <a class="el" href="class_p_c_t2075.html">PCT2075</a>, <a class="el" href="class_p3_t1085.html">P3T1085</a> |<a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> <a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a> |Base library for I²C operations |none (can be applied as base class for all I²C targets)|&mdash; </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
