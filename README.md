@@ -33,11 +33,11 @@ void loop() {
 ```
 
 # Supported devices
-Type#|Features|Accuracy|Resolution|Interface|Evaluation board
----|---|---|---|---|---
-[LM75B](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B)											|An industrial standard Digital Temperature Sensor				|±2℃		|0.125℃ (11bit)	|I²C Fast-mode (400KHz)			|---
-[PCT2075](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075)	|I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor	|±1℃		|0.125℃ (11bit)	|I²C Fast-mode Plus (1MHz)		|[PCT2075DP-ARD Arduino® Shield - Temperature Sensors](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD)
-[P3T1085](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK)								|I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1085UK Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD)
+Type#|Header file|Features|Accuracy|Resolution|Interface|Evaluation board
+---|---|---|---|---|---|---
+[LM75B](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B)											|`LM75B.h`		|An industrial standard Digital Temperature Sensor				|±2℃		|0.125℃ (11bit)	|I²C Fast-mode (400KHz)			|---
+[PCT2075](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075)	|`PCT2075.h`	|I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor	|±1℃		|0.125℃ (11bit)	|I²C Fast-mode Plus (1MHz)		|[PCT2075DP-ARD Arduino® Shield - Temperature Sensors](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD)
+[P3T1085](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK)								|`P3T1085.h`	|I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1085UK Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD)
 
 # Getting started
 ## Install and run
