@@ -13,7 +13,7 @@ The I²C temperature sensors can measure temperature and output comparator or in
 
 With `TempSensor_NXP_Arduino` library, the temperature measurement and showing it in Celsius can be done very simple as follwoing. 
 ```cpp
-#include <TempSensor.h>
+#include <PCT2075.h>
 
 PCT2075 sensor;
 
