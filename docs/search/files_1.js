@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tempsensor_2ecpp_0',['TempSensor.cpp',['../_temp_sensor_8cpp.html',1,'']]],
-  ['tempsensor_2eh_1',['TempSensor.h',['../_temp_sensor_8h.html',1,'']]]
+  ['p3t1085_2eh_0',['P3T1085.h',['../_p3_t1085_8h.html',1,'']]],
+  ['pct2075_2eh_1',['PCT2075.h',['../_p_c_t2075_8h.html',1,'']]]
 ];

@@ -53,7 +53,7 @@ public:
  *  @class LM75B
 
  *  About LM75B:
- *    https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B
+ *		https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B?_gl=1*kd25ib*_ga*NTA5NDE1NDA0LjE2NzgzNDYyNzA.*_ga_WM5LE0KMSH*MTY4MjEyMjc1OC42Mi4wLjE2ODIxMjI3NTguMC4wLjA.
  */
 
 class LM75B : public TempSensor
@@ -107,7 +107,7 @@ public:
  *  @class PCT2075
 
  *  About PCT2075:
- *    https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075
+ *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075
  */
 
 class PCT2075 : public LM75B
@@ -163,7 +163,7 @@ public:
  *  @class P3T1085
 
  *  About P3T1085:
- *    https://www.nxp.jp/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
+ *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
  */
 
 class P3T1085 : public LM75B

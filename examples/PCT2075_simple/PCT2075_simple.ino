@@ -12,7 +12,7 @@
  */
 
 
-#include <TempSensor.h>
+#include <PCT2075.h>
 
 PCT2075 sensor;
 

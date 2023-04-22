@@ -1,5 +1,5 @@
 
-/** PCT2075 temperature sensor operation sample
+/** P3T1085 temperature sensor operation sample
  *  
  *  This sample code is showing P3T1085 temperature sensor operation with interrupt.
  *  "T_HIGH" and "T_LOW" are set to generate interrupt.
@@ -16,7 +16,7 @@
  *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
  */
 
-#include <TempSensor.h>
+#include <P3T1085.h>
 #include <MsTimer2.h>
 
 P3T1085 sensor;
