@@ -11,7 +11,8 @@ _P3T1085UK-ARD and PCT2075DP-ARD : Arduino® Shield Evaluation Board for tempera
 An Arduino library for I²C temperature sensors with sample code.  
 The I²C temperature sensors can measure temperature and output comparator or interrupt signals by threshold settings. 
 
-With `TempSensor_NXP_Arduino` library, the temperature measurement and showing it in Celsius can be done very simple as follwoing. 
+With `TempSensor_NXP_Arduino` library, the temperature measurement and showing it in Celsius can be done very simple as follwoing.  
+Include device name header file (`LM75B.h`, `PCT2075.h`, and/or `P3T1085.h`) to use those class libraries. 
 ```cpp
 #include <PCT2075.h>
 
