@@ -68,6 +68,52 @@ Use **Library manager** in Arduino IDE for easy install
 # What's inside?
 ## Temperature sensor library
 `LM75B`, `PCT2075` and `P3T1085` class libraries are included. Those libraries can be used by just making an instance from those class.  
+
+### Making a device instance
+The temperature sensor device can be operated with this very simple code. 
+```cpp
+#include <PCT2075.h>
+
+PCT2075 sensor;
+
+void setup() {
+  Wire.begin();
+}
+
+void loop() {
+  float t = sensor.temp();
+
+  Serial.println(t, 3);
+  delay(1000);
+}
+```
+
+To make an instance of the device, it can be declared like..
+```cpp
+#include <PCT2075.h>
+PCT2075 sensor;
+```
+
+Every temperature sensor device instances has 0x48 default I²C address. If you need to change the address, it should be done at declaration of the instance.  
+```cpp
+#include <PCT2075.h>
+PCT2075 sensor( 0x49 );  // I²C target address is 0x49
+```
+
+
+On addition to that, if the device is connected on different I²C bus, it needs to use different TwoWire instance.  
+It uses `Wire` instance in default condition. If it should be changed, it can be like..
+```cpp
+#include <PCT2075.h>
+PCT2075 sensor( Wire1, 0x49 );  // Choosing Wire1 and I²C target address is 0x49
+
+void setup() {
+  Wire1.begin();  // Needs to call "begin()" in Wire1
+  ..
+```
+
+### Methods
+
 Those libraries have common methods to get/set device information.
 
 Method|Role
@@ -87,6 +133,7 @@ PCT2075_simple							|Simple sample for just reading temperature fro PCT2075 in 
 PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thresholds +2℃ and +1℃ of temperature when starting. The sketch controls **on-board heater** to keep the temperature withon those thresholds.
 P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
 P3T1085_interrupt						|Demo for interrupt behavior. On the **P3T1085UK-ARD evaluation board**, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D8 and D2 pins**. 
+P3T1085_simple_on_Arduino_Due			|Same as "P3T1085_simple" code but it can run on Arduino Due. This code is to show how the different TwoWire instance can be targeted
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html).

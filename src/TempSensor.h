@@ -34,6 +34,7 @@ public:
 	 *	Methods to define class fundamental features, overridden by sub-classes
 	 */
 	TempSensor( uint8_t i2c_address );
+	TempSensor( TwoWire& wire, uint8_t i2c_address );
 	virtual ~TempSensor();
 	virtual float temp( void )	= 0;
 	
@@ -72,6 +73,13 @@ public:
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	LM75B( uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	LM75B( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */
@@ -121,11 +129,19 @@ public:
 		Tos,	/**< Tos registe	*/
 		Tidle,	/**< Tidle register	*/
 	};
-    /** Create a PCT2075 instance connected to specified I2C pins with specified address
-     *
-     * @param i2c_address I2C-bus address (default: (0x90>>1))
-     */
-    PCT2075( uint8_t i2c_address = (0x90 >> 1) );
+	
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	PCT2075( uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	PCT2075( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
     /** Destructor of PCT2075
      */
@@ -176,11 +192,19 @@ public:
 		T_LOW,	/**< Thyst register	*/
 		T_HIGH,	/**< Tos registe	*/
 	};
+	
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	P3T1085( uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1085( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */

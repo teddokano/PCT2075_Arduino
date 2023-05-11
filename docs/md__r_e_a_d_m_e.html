@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -102,8 +102,8 @@ What is this?</h1>
 <div class="line">  delay(1000);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_p_c_t2075_8h_html"><div class="ttname"><a href="_p_c_t2075_8h.html">PCT2075.h</a></div></div>
-<div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">virtual float temp(void)</div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8cpp_source.html#l00032">TempSensor.cpp:32</a></div></div>
-<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8h_source.html#l00113">TempSensor.h:114</a></div></div>
+<div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">virtual float temp(void)</div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8cpp_source.html#l00036">TempSensor.cpp:36</a></div></div>
+<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition:</b> <a href="_temp_sensor_8h_source.html#l00121">TempSensor.h:122</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 Supported devices</h1>
 <table class="markdownTable">
@@ -176,11 +176,15 @@ Related libraries</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Feature   </th><th class="markdownTableHeadNone">Target devices   </th><th class="markdownTableHeadNone">Required library    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/GPIO_NXP_Arduino">GPIO_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LED driver libraries   </td><td class="markdownTableBodyNone">PCAL6408A, PCAL6416A, PCAL6524, PCAL6534   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/GPIO_NXP_Arduino">GPIO_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">GPIO libraries   </td><td class="markdownTableBodyNone">PCAL6408A, PCAL6416A, PCAL6524, PCAL6534, PCA9555, PCA9554   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LED driver libraries   </td><td class="markdownTableBodyNone">PCA9955B, PCA9956B, PCA9957   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LCDDriver_NXP_Arduino">LCDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LCD driver libraries   </td><td class="markdownTableBodyNone">PCA8561   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">RTC driver libraries   </td><td class="markdownTableBodyNone">PCF2131, PCF85063A   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LED driver libraries   </td><td class="markdownTableBodyNone">PCA9955B, PCA9956B, PCA9957   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/MUX_SW_NXP_Arduino">MUX_SW_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">I²C mux/switch libraries   </td><td class="markdownTableBodyNone">PCA9846   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">RTC libraries   </td><td class="markdownTableBodyNone">PCF2131, PCF85063A   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="https://github.com/teddokano/TempSensor_NXP_Arduino">TempSensor_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">Temperature sensor libraries   </td><td class="markdownTableBodyNone"><a class="el" href="class_l_m75_b.html">LM75B</a>, <a class="el" href="class_p_c_t2075.html">PCT2075</a>, <a class="el" href="class_p3_t1085.html">P3T1085</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
 <tr class="markdownTableRowOdd">

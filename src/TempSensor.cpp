@@ -4,8 +4,10 @@
 
 TempSensor::TempSensor( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
-	//  do nothing.
-	//  leave it in default state.
+}
+
+TempSensor::TempSensor( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address )
+{
 }
 
 TempSensor::~TempSensor()
@@ -21,8 +23,10 @@ float TempSensor::read()
 
 LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address )
 {
-	//  do nothing.
-	//  leave it in default state.
+}
+
+LM75B::LM75B( TwoWire& wire, uint8_t i2c_address ) : TempSensor( wire, i2c_address )
+{
 }
 
 LM75B::~LM75B()
@@ -52,8 +56,10 @@ void LM75B::os_mode( mode flag )
 /* PCT2075 class ******************************************/
 PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address )
 {
-	//  do nothing.
-	//  leave it in default state.
+}
+
+PCT2075::PCT2075( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
+{
 }
 
 PCT2075::~PCT2075()
@@ -64,8 +70,10 @@ PCT2075::~PCT2075()
 
 P3T1085::P3T1085( uint8_t i2c_address ) : LM75B( i2c_address )
 {
-	//  do nothing.
-	//  leave it in default state.
+}
+
+P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
+{
 }
 
 P3T1085::~P3T1085()

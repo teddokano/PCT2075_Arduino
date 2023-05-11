@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.4.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -102,6 +102,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a69af390bf632f029c84db1b75c55f50b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temp_sensor.html#a69af390bf632f029c84db1b75c55f50b">TempSensor</a> (uint8_t i2c_address)</td></tr>
 <tr class="separator:a69af390bf632f029c84db1b75c55f50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333f4f94d4732fa55f02330b915580b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temp_sensor.html#a333f4f94d4732fa55f02330b915580b3">TempSensor</a> (TwoWire &amp;wire, uint8_t i2c_address)</td></tr>
+<tr class="separator:a333f4f94d4732fa55f02330b915580b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8527455e1393f2facd705ef0b1076349"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temp_sensor.html#a8527455e1393f2facd705ef0b1076349">~TempSensor</a> ()</td></tr>
 <tr class="separator:a8527455e1393f2facd705ef0b1076349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9042c79dc6755b8568f98873729af023"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_temp_sensor.html#a9042c79dc6755b8568f98873729af023">temp</a> (void)=0</td></tr>
@@ -143,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a69af390bf632f029c84db1b75c55f50b" name="a69af390bf632f029c84db1b75c55f50b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69af390bf632f029c84db1b75c55f50b">&#9670;&#160;</a></span>TempSensor()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a69af390bf632f029c84db1b75c55f50b">&#9670;&#160;</a></span>TempSensor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +161,36 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00005">5</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a333f4f94d4732fa55f02330b915580b3" name="a333f4f94d4732fa55f02330b915580b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333f4f94d4732fa55f02330b915580b3">&#9670;&#160;</a></span>TempSensor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TempSensor::TempSensor </td>
+          <td>(</td>
+          <td class="paramtype">TwoWire &amp;&#160;</td>
+          <td class="paramname"><em>wire</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>i2c_address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00009">9</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
 
 </div>
 </div>
@@ -185,7 +217,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00011">11</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00013">13</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +250,7 @@ Public Member Functions</h2></td></tr>
 </p>
 <dl class="section return"><dt>Returns</dt><dd>temperature value in degree Celsius [°C] </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00015">15</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_temp_sensor_8cpp_source.html#l00017">17</a> of file <a class="el" href="_temp_sensor_8cpp_source.html">TempSensor.cpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +280,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_temp_sensor_8cpp_source.html#l00015">read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_temp_sensor_8cpp_source.html#l00017">read()</a>.</p>
 
 </div>
 </div>
