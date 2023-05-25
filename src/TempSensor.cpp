@@ -99,3 +99,17 @@ bool P3T1085::clear( void )
 	return (read_r16( Conf ) & 0x1000) ? true : false;
 }
 
+/* P3T1755 class ******************************************/
+
+P3T1755::P3T1755( uint8_t i2c_address ) : P3T1085( i2c_address )
+{
+}
+
+P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : P3T1085( wire, i2c_address )
+{
+}
+
+P3T1755::~P3T1755()
+{
+}
+

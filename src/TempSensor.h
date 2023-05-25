@@ -242,4 +242,34 @@ public:
 };
 
 
+/** P3T1755 class
+ *	
+ *  @class P3T1755
+
+ *  About P3T1085:
+ *    https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1755DP
+ */
+
+class P3T1755 : public P3T1085
+{
+public:
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1755( uint8_t i2c_address = (0x98 >> 1) );
+
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1755( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Destructor of PCT2075
+	 */
+	virtual ~P3T1755();
+
+};
+
 #endif //	ARDUINO_TEMP_SENSOR_H
