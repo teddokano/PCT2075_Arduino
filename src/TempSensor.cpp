@@ -113,3 +113,14 @@ P3T1755::~P3T1755()
 {
 }
 
+void P3T1755::os_mode( mode flag )
+{
+	bit_op8( Conf, ~0x02, flag << 1 );
+}
+
+bool P3T1755::clear( void )
+{
+	read_r8( Conf );
+	return true;
+}
+

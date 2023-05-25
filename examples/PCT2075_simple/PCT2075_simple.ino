@@ -1,7 +1,6 @@
 /** PCT2075 temperature sensor operation sample
  *  
- *  This sample code is showing PCT2075 temperature sensor operation with interrupt.
- *  "Tos" and "Thyst" are set to generate interrupt.   
+ *  This sample code is showing PCT2075 temperature sensor operation. 
  *
  *  @author  Tedd OKANO
  *
@@ -17,8 +16,12 @@
 PCT2075 sensor;
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  Wire.begin();
+
   Serial.println("\r***** Hello, PCT2075! *****");
 }
 

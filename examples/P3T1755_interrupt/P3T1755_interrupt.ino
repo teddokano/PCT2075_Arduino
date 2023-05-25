@@ -1,12 +1,12 @@
 
-/** P3T1085 temperature sensor operation sample
+/** P3T1755 temperature sensor operation sample
  *  
- *  This sample code is showing P3T1085 temperature sensor operation with interrupt.
+ *  This sample code is showing P3T1755 temperature sensor operation with interrupt.
  *  "T_HIGH" and "T_LOW" are set to generate interrupt.
  *  
  *  
  *  NOTE: To run this sample code, a timer library "MsTimer2" is needed to be installed
- *  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector
+ *  NOTE: For use of evaluation board:P3T1755DP-ARD, short D9 and D2 pins on Arduino Shield connector
  *
  *  @author  Tedd OKANO
  *
@@ -16,10 +16,10 @@
  *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
  */
 
-#include <P3T1085.h>
+#include <P3T1755.h>
 #include <MsTimer2.h>
 
-P3T1085 sensor;
+P3T1755 sensor;
 
 const uint8_t interruptPin = 2;
 bool int_flag = false;
@@ -39,13 +39,13 @@ void setup() {
 
   sensor.clear();
   sensor.thresholds(temp + 1, temp + 2);
-  sensor.os_mode(P3T1085::INTERRUPT);
+  sensor.os_mode(P3T1755::INTERRUPT);
 
   Serial.println("");
   Serial.println("*  NOTE: To run this sample code, a timer library \"MsTimer2\" is needed to be installed");
-  Serial.println("*  NOTE: For use of evaluation board:P3T1085UK-ARD, short D8 and D2 pins on Arduino Shield connector");
+  Serial.println("*  NOTE: For use of evaluation board:P3T1755DP-ARD, short D9 and D2 pins on Arduino Shield connector");
 
-  Serial.println("\n***** Hello, P3T1085! *****");
+  Serial.println("\n***** Hello, P3T1755! *****");
   Serial.print("Temperature at start: ");
   Serial.println(temp);
 
@@ -78,11 +78,7 @@ void loop() {
   if (int_flag) {
     int_flag = false;
 
-    fh_flag = sensor.clear();
-
-    if (fh_flag)
-      Serial.println("Interrupt: temp is over T_HIGH");
-    else
-      Serial.println("Interrupt: temp is under T_LOW");
+    sensor.clear();
+    Serial.println("Interrupt happened");
   }
 }

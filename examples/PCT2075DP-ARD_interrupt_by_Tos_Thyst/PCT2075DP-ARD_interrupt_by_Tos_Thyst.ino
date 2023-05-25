@@ -24,8 +24,11 @@ bool heater = true;
 bool int_flag = false;
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  Wire.begin();
 
   pinMode(heaterPin, OUTPUT);
 

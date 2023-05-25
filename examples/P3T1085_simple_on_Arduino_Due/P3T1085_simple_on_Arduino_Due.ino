@@ -16,8 +16,12 @@
 P3T1085 sensor(Wire1);
 
 void setup() {
-  Wire1.begin();
   Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  Wire.begin();
+
   Serial.println("\n***** Hello, P3T1085! *****");
 }
 

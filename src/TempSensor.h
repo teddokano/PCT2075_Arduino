@@ -253,6 +253,14 @@ public:
 class P3T1755 : public P3T1085
 {
 public:
+	/** Name of the PCT2075 registers */
+	enum reg_num {
+		Temp,	/**< Temp register	*/
+		Conf,	/**< Conf register	*/
+		T_LOW,	/**< Thyst register	*/
+		T_HIGH,	/**< Tos registe	*/
+	};
+	
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
@@ -270,6 +278,17 @@ public:
 	 */
 	virtual ~P3T1755();
 
+	/** Set OS operation mode 
+	 *
+	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 */	
+	virtual void os_mode( mode flag );
+
+	/** Clear ALERT (Clear interurpt)
+	 * 
+	 * @return true
+	 */	
+	virtual bool clear( void );
 };
 
 #endif //	ARDUINO_TEMP_SENSOR_H

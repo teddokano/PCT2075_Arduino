@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.5.0</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.5.1</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -192,6 +192,17 @@ $(function() {
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>{</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_p3_t1755.html#ac7e1e79eb6339944cb0de179b7920a0a">  116</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_p3_t1755.html#ac7e1e79eb6339944cb0de179b7920a0a">P3T1755::os_mode</a>( <a class="code hl_enumeration" href="class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69">mode</a> flag )</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    bit_op8( <a class="code hl_enumvalue" href="class_p3_t1755.html#ae8ddf5ef270998685a3b51231e5fcb07a87db9735a57e2e46d9bfeae70ec174ca">Conf</a>, ~0x02, flag &lt;&lt; 1 );</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_p3_t1755.html#a5cce23c44a950c270e082c241f2586bc">  121</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_p3_t1755.html#a5cce23c44a950c270e082c241f2586bc">P3T1755::clear</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    read_r8( <a class="code hl_enumvalue" href="class_p3_t1755.html#ae8ddf5ef270998685a3b51231e5fcb07a87db9735a57e2e46d9bfeae70ec174ca">Conf</a> );</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="ttc" id="a_temp_sensor_8h_html"><div class="ttname"><a href="_temp_sensor_8h.html">TempSensor.h</a></div></div>
 <div class="ttc" id="aclass_l_m75_b_html"><div class="ttname"><a href="class_l_m75_b.html">LM75B</a></div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8h_source.html#l00060">TempSensor.h:61</a></div></div>
 <div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">virtual float temp(void)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00036">TempSensor.cpp:36</a></div></div>
@@ -212,7 +223,10 @@ $(function() {
 <div class="ttc" id="aclass_p3_t1085_html_a974496f4108ba81aef9ba3f11ba2f34d"><div class="ttname"><a href="class_p3_t1085.html#a974496f4108ba81aef9ba3f11ba2f34d">P3T1085::~P3T1085</a></div><div class="ttdeci">virtual ~P3T1085()</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00079">TempSensor.cpp:79</a></div></div>
 <div class="ttc" id="aclass_p3_t1085_html_ab1e9d387b4aea90656e67df185e45b13"><div class="ttname"><a href="class_p3_t1085.html#ab1e9d387b4aea90656e67df185e45b13">P3T1085::os_mode</a></div><div class="ttdeci">virtual void os_mode(mode flag)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00092">TempSensor.cpp:92</a></div></div>
 <div class="ttc" id="aclass_p3_t1085_html_abbc28eb2b2ca50452b0d8859fde4f7f9"><div class="ttname"><a href="class_p3_t1085.html#abbc28eb2b2ca50452b0d8859fde4f7f9">P3T1085::thresholds</a></div><div class="ttdeci">virtual void thresholds(float v0, float v1)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00083">TempSensor.cpp:83</a></div></div>
+<div class="ttc" id="aclass_p3_t1755_html_a5cce23c44a950c270e082c241f2586bc"><div class="ttname"><a href="class_p3_t1755.html#a5cce23c44a950c270e082c241f2586bc">P3T1755::clear</a></div><div class="ttdeci">virtual bool clear(void)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00121">TempSensor.cpp:121</a></div></div>
+<div class="ttc" id="aclass_p3_t1755_html_ac7e1e79eb6339944cb0de179b7920a0a"><div class="ttname"><a href="class_p3_t1755.html#ac7e1e79eb6339944cb0de179b7920a0a">P3T1755::os_mode</a></div><div class="ttdeci">virtual void os_mode(mode flag)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00116">TempSensor.cpp:116</a></div></div>
 <div class="ttc" id="aclass_p3_t1755_html_ad75f6d388a181c90e5893bf3a325f291"><div class="ttname"><a href="class_p3_t1755.html#ad75f6d388a181c90e5893bf3a325f291">P3T1755::~P3T1755</a></div><div class="ttdeci">virtual ~P3T1755()</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00112">TempSensor.cpp:112</a></div></div>
+<div class="ttc" id="aclass_p3_t1755_html_ae8ddf5ef270998685a3b51231e5fcb07a87db9735a57e2e46d9bfeae70ec174ca"><div class="ttname"><a href="class_p3_t1755.html#ae8ddf5ef270998685a3b51231e5fcb07a87db9735a57e2e46d9bfeae70ec174ca">P3T1755::Conf</a></div><div class="ttdeci">@ Conf</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8h_source.html#l00259">TempSensor.h:259</a></div></div>
 <div class="ttc" id="aclass_p3_t1755_html_aea5d85edc953207de8da65b10cea5695"><div class="ttname"><a href="class_p3_t1755.html#aea5d85edc953207de8da65b10cea5695">P3T1755::P3T1755</a></div><div class="ttdeci">P3T1755(uint8_t i2c_address=(0x98 &gt; &gt; 1))</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00104">TempSensor.cpp:104</a></div></div>
 <div class="ttc" id="aclass_p_c_t2075_html_a1140a5e86b09d5ad59dec85dde0cba73"><div class="ttname"><a href="class_p_c_t2075.html#a1140a5e86b09d5ad59dec85dde0cba73">PCT2075::PCT2075</a></div><div class="ttdeci">PCT2075(uint8_t i2c_address=(0x90 &gt; &gt; 1))</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00057">TempSensor.cpp:57</a></div></div>
 <div class="ttc" id="aclass_p_c_t2075_html_a5db78c5b6a4719d0537553f9c010e089"><div class="ttname"><a href="class_p_c_t2075.html#a5db78c5b6a4719d0537553f9c010e089">PCT2075::~PCT2075</a></div><div class="ttdeci">virtual ~PCT2075()</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00065">TempSensor.cpp:65</a></div></div>
