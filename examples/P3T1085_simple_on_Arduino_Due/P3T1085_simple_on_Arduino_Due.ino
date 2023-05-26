@@ -22,6 +22,12 @@ void setup() {
 
   Wire.begin();
 
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  Wire.begin();
+
   Serial.println("\n***** Hello, P3T1085! *****");
 }
 

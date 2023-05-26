@@ -19,8 +19,12 @@ Include device name header file (`LM75B.h`, `PCT2075.h`, and/or `P3T1085.h`) to 
 PCT2075 sensor;
 
 void setup() {
-  Wire.begin();
   Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  Wire.begin();
+
   Serial.println("\r***** Hello, PCT2075! *****");
 }
 

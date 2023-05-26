@@ -15,22 +15,17 @@
 P3T1085 sensor;
 
 void setup() {
-  /*
   Serial.begin(9600);
   while (!Serial)
     ;
 
   Wire.begin();
-  */
-  Wire.begin();
-  Serial.begin(9600);
+
   Serial.println("\n***** Hello, P3T1085! *****");
 }
 
 void loop() {
   float t = sensor.temp();
-  Serial.println(sensor.ping());
-
 
   Serial.println(t, 4);
   delay(1000);
