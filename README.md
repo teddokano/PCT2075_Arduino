@@ -76,6 +76,7 @@ Use **Library manager** in Arduino IDE for easy install
 
 ### Making a device instance
 The temperature sensor device can be operated with this very simple code. 
+In this code, celcius vale which is read from PCT2075 is stored in variable `t` 
 ```cpp
 #include <PCT2075.h>
 
@@ -87,9 +88,6 @@ void setup() {
 
 void loop() {
   float t = sensor.temp();
-
-  Serial.println(t, 3);
-  delay(1000);
 }
 ```
 
@@ -139,6 +137,8 @@ PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thr
 P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
 P3T1085_interrupt						|Demo for interrupt behavior. On the **P3T1085UK-ARD evaluation board**, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D8 and D2 pins**. 
 P3T1085_simple_on_Arduino_Due			|Same as "P3T1085_simple" code but it can run on Arduino Due. This code is to show how the different TwoWire instance can be targeted
+P3T1755_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
+P3T1755_interrupt						|Demo for interrupt behavior. On the **P3T1755DP-ARD evaluation board**, the D9 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D9 and D2 pins**. 
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html).
