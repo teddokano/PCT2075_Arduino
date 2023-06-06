@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.5.2</span>
+   <div id="projectname">TempSensor_NXP_Arduino<span id="projectnumber">&#160;0.5.3</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -107,7 +107,7 @@ What is this?</h1>
 <div class="line">}</div>
 <div class="ttc" id="a_p_c_t2075_8h_html"><div class="ttname"><a href="_p_c_t2075_8h.html">PCT2075.h</a></div></div>
 <div class="ttc" id="aclass_l_m75_b_html_a1634939d680ecc1fa0b84a27978f4d32"><div class="ttname"><a href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">LM75B::temp</a></div><div class="ttdeci">virtual float temp(void)</div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8cpp_source.html#l00036">TempSensor.cpp:36</a></div></div>
-<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8h_source.html#l00121">TempSensor.h:122</a></div></div>
+<div class="ttc" id="aclass_p_c_t2075_html"><div class="ttname"><a href="class_p_c_t2075.html">PCT2075</a></div><div class="ttdef"><b>Definition</b> <a href="_temp_sensor_8h_source.html#l00119">TempSensor.h:120</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 Supported devices</h1>
 <table class="markdownTable">
@@ -144,7 +144,7 @@ Temperature sensor library</h2>
 </p>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Making a device instance</h3>
-<p>The temperature sensor device can be operated with this very simple code. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_p_c_t2075_8h.html">PCT2075.h</a>&gt;</span></div>
+<p>The temperature sensor device can be operated with this very simple code. In this code, celcius vale which is read from <a class="el" href="class_p_c_t2075.html">PCT2075</a> is stored in variable <code>t</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_p_c_t2075_8h.html">PCT2075.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="class_p_c_t2075.html">PCT2075</a> sensor;</div>
 <div class="line"> </div>
@@ -154,9 +154,6 @@ Making a device instance</h3>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">  <span class="keywordtype">float</span> t = sensor.<a class="code hl_function" href="class_l_m75_b.html#a1634939d680ecc1fa0b84a27978f4d32">temp</a>();</div>
-<div class="line"> </div>
-<div class="line">  Serial.println(t, 3);</div>
-<div class="line">  delay(1000);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>To make an instance of the device, it can be declared like.. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_p_c_t2075_8h.html">PCT2075.h</a>&gt;</span></div>
 <div class="line"><a class="code hl_class" href="class_p_c_t2075.html">PCT2075</a> sensor;</div>
@@ -201,7 +198,11 @@ Examples</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">P3T1085_interrupt   </td><td class="markdownTableBodyNone">Demo for interrupt behavior. On the <b>P3T1085UK-ARD evaluation board</b>, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, <b>short D8 and D2 pins</b>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">P3T1085_simple_on_Arduino_Due   </td><td class="markdownTableBodyNone">Same as "P3T1085_simple" code but it can run on Arduino Due. This code is to show how the different TwoWire instance can be targeted   </td></tr>
+<td class="markdownTableBodyNone">P3T1085_simple_on_Arduino_Due   </td><td class="markdownTableBodyNone">Same as "P3T1085_simple" code but it can run on Arduino Due. This code is to show how the different TwoWire instance can be targeted    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">P3T1755_simple   </td><td class="markdownTableBodyNone">Simple sample for just reading temperature fro <a class="el" href="class_p3_t1085.html">P3T1085</a> in every second (Similar to <code>PCT2075_simple</code>)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">P3T1755_interrupt   </td><td class="markdownTableBodyNone">Demo for interrupt behavior. On the <b>P3T1755DP-ARD evaluation board</b>, the D9 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, <b>short D9 and D2 pins</b>.   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Document</h1>
