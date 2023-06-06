@@ -52,7 +52,6 @@ void LM75B::os_mode( mode flag )
 	bit_op8( Conf, ~0x02, flag << 1 );
 }
 
-
 /* PCT2075 class ******************************************/
 PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address )
 {
@@ -66,27 +65,41 @@ PCT2075::~PCT2075()
 {
 }
 
-/* P3T1085 class ******************************************/
+/* P3T1755 class ******************************************/
 
-P3T1085::P3T1085( uint8_t i2c_address ) : LM75B( i2c_address )
+P3T1755::P3T1755( uint8_t i2c_address ) : LM75B( i2c_address )
 {
 }
 
-P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
+P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
 {
 }
 
-P3T1085::~P3T1085()
+P3T1755::~P3T1755()
 {
 }
 
-void P3T1085::thresholds( float v0, float v1 )
+void P3T1755::thresholds( float v0, float v1 )
 {
 	float higher	= (v0 < v1) ? v1 : v0;
 	float lower		= (v0 < v1) ? v0 : v1;
 	
 	write_r16( T_HIGH, ((uint16_t)(higher * 256.0)) & 0xFFF0 );
 	write_r16( T_LOW,  ((uint16_t)(lower  * 256.0)) & 0xFFF0 );
+}
+
+/* P3T1085 class ******************************************/
+
+P3T1085::P3T1085( uint8_t i2c_address ) : P3T1755( i2c_address )
+{
+}
+
+P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : P3T1755( wire, i2c_address )
+{
+}
+
+P3T1085::~P3T1085()
+{
 }
 
 void P3T1085::os_mode( mode flag )
@@ -98,29 +111,3 @@ bool P3T1085::clear( void )
 {
 	return (read_r16( Conf ) & 0x1000) ? true : false;
 }
-
-/* P3T1755 class ******************************************/
-
-P3T1755::P3T1755( uint8_t i2c_address ) : P3T1085( i2c_address )
-{
-}
-
-P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : P3T1085( wire, i2c_address )
-{
-}
-
-P3T1755::~P3T1755()
-{
-}
-
-void P3T1755::os_mode( mode flag )
-{
-	bit_op8( Conf, ~0x02, flag << 1 );
-}
-
-bool P3T1755::clear( void )
-{
-	read_r8( Conf );
-	return true;
-}
-

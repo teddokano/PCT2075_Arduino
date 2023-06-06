@@ -37,7 +37,6 @@ void setup() {
 
   float temp = sensor.temp();
 
-  sensor.clear();
   sensor.thresholds(temp + 1, temp + 2);
   sensor.os_mode(P3T1755::INTERRUPT);
 
@@ -68,8 +67,6 @@ void timer_callback() {
 }
 
 void loop() {
-  bool fh_flag;
-
   if (tim_flag) {
     tim_flag = false;
     Serial.println(sensor.temp(), 4);
@@ -77,8 +74,6 @@ void loop() {
 
   if (int_flag) {
     int_flag = false;
-
-    sensor.clear();
     Serial.println("Interrupt happened");
   }
 }

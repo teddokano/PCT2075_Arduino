@@ -48,7 +48,6 @@ public:
 };
 
 
-
 /** LM75B class
  *	
  *  @class LM75B
@@ -107,7 +106,6 @@ public:
 	 */	
 	virtual void os_mode( mode flag );
 };
-
 
 
 /** PCT2075 class
@@ -173,75 +171,6 @@ public:
 };
 
 
-
-/** P3T1085 class
- *	
- *  @class P3T1085
-
- *  About P3T1085:
- *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
- */
-
-class P3T1085 : public LM75B
-{
-public:
-	/** Name of the PCT2075 registers */
-	enum reg_num {
-		Temp,	/**< Temp register	*/
-		Conf,	/**< Conf register	*/
-		T_LOW,	/**< Thyst register	*/
-		T_HIGH,	/**< Tos registe	*/
-	};
-	
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
-	 *
-	 * @param i2c_address I2C-bus address (default: (0x90>>1))
-	 */
-	P3T1085( uint8_t i2c_address = (0x90 >> 1) );
-
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
-	 *
-	 * @param wire TwoWire instance
-	 * @param i2c_address I2C-bus address (default: (0x90>>1))
-	 */
-	P3T1085( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
-
-	/** Destructor of PCT2075
-	 */
-	virtual ~P3T1085();
-
-#if DOXYGEN_ONLY
-	/** Get temperature value in degree Celsius [°C] 
-	 *
-	 * @return temperature value in degree Celsius [°C] 
-	 */
-	virtual float temp( void );	
-#endif
-	
-	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
-	 *
-	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
-	 *. another will be the hysteresis (Thyst)
-	 *
-	 * @param v0 a value in degree Celsius
-	 * @param v1 a value in degree Celsius
-	 */	
-	virtual void thresholds( float v0, float v1 );
-
-	/** Set OS operation mode 
-	 *
-	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
-	 */	
-	virtual void os_mode( mode flag );
-
-	/** Clear ALERT (Clear interurpt)
-	 * 
-	 * @return true if FH flag in Congiguration register is set 
-	 */	
-	virtual bool clear( void );
-};
-
-
 /** P3T1755 class
  *	
  *  @class P3T1755
@@ -250,7 +179,7 @@ public:
  *    https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1755DP
  */
 
-class P3T1755 : public P3T1085
+class P3T1755 : public LM75B
 {
 public:
 	/** Name of the PCT2075 registers */
@@ -278,6 +207,46 @@ public:
 	 */
 	virtual ~P3T1755();
 
+	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
+	 *
+	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
+	 *. another will be the hysteresis (Thyst)
+	 *
+	 * @param v0 a value in degree Celsius
+	 * @param v1 a value in degree Celsius
+	 */	
+	virtual void thresholds( float v0, float v1 );
+};
+
+
+/** P3T1085 class
+ *	
+ *  @class P3T1085
+
+ *  About P3T1085:
+ *    https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK
+ */
+
+class P3T1085 : public P3T1755
+{
+public:
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1085( uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1085( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Destructor of PCT2075
+	 */
+	virtual ~P3T1085();
+
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
@@ -286,7 +255,7 @@ public:
 
 	/** Clear ALERT (Clear interurpt)
 	 * 
-	 * @return true
+	 * @return true if FH flag in Congiguration register is set 
 	 */	
 	virtual bool clear( void );
 };
