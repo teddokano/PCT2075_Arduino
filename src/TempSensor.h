@@ -89,11 +89,11 @@ public:
 	 * @return temperature value in degree Celsius [°C] 
 	 */
 	virtual float temp( void );
-	
+
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
 	 *
 	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
-	 *. another will be the hysteresis (Thyst)
+	 *	another will be the hysteresis (Thyst)
 	 *
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
@@ -105,6 +105,16 @@ public:
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
 	virtual void os_mode( mode flag );
+
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+#endif
 };
 
 
@@ -152,10 +162,18 @@ public:
 	 */
 	virtual float temp( void );
 	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
 	 *
 	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
-	 *. another will be the hysteresis (Thyst)
+	 *	another will be the hysteresis (Thyst)
 	 *
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
@@ -166,7 +184,7 @@ public:
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	virtual void os_mode( mode flag );
+	virtual void os_mode( mode flag );	
 #endif
 };
 
@@ -210,12 +228,34 @@ public:
 	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
 	 *
 	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
-	 *. another will be the hysteresis (Thyst)
+	 *	another will be the hysteresis (Thyst)
 	 *
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
 	virtual void thresholds( float v0, float v1 );
+
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float temp( void );
+	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+
+	/** Set OS operation mode 
+	 *
+	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 */	
+	virtual void os_mode( mode flag );	
+#endif
 };
 
 
@@ -258,6 +298,32 @@ public:
 	 * @return true if FH flag in Congiguration register is set 
 	 */	
 	virtual bool clear( void );
+
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float temp( void );
+	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+
+	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
+	 *
+	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
+	 *	another will be the hysteresis (Thyst)
+	 *
+	 * @param v0 a value in degree Celsius
+	 * @param v1 a value in degree Celsius
+	 */	
+	virtual void thresholds( float v0, float v1 );
+#endif
 };
 
 #endif //	ARDUINO_TEMP_SENSOR_H
