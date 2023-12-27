@@ -132,6 +132,7 @@ For a quick access to those sketch, **refer to last step** of **"Getting started
 
 Sketch|Feature
 ---|---
+LM75B_simple							|Simple sample for just reading temperature fro LM75B in every second
 PCT2075_simple							|Simple sample for just reading temperature fro PCT2075 in every second
 PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thresholds +2℃ and +1℃ of temperature when starting. The sketch controls **on-board heater** to keep the temperature withon those thresholds.
 P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
