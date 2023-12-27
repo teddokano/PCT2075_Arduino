@@ -2,11 +2,11 @@
 
 /* TempSensor class ******************************************/
 
-TempSensor::TempSensor( const uint8_t i2c_address ) : I2C_device( i2c_address )
+TempSensor::TempSensor( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
 }
 
-TempSensor::TempSensor( TwoWire& wire, const uint8_t i2c_address ) : I2C_device( wire, i2c_address )
+TempSensor::TempSensor( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address )
 {
 }
 
@@ -21,11 +21,11 @@ float TempSensor::read()
 
 /* LM75B class ******************************************/
 
-LM75B::LM75B( const uint8_t i2c_address ) : TempSensor( i2c_address )
+LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address )
 {
 }
 
-LM75B::LM75B( TwoWire& wire, const uint8_t i2c_address ) : TempSensor( wire, i2c_address )
+LM75B::LM75B( TwoWire& wire, uint8_t i2c_address ) : TempSensor( wire, i2c_address )
 {
 }
 
@@ -38,7 +38,7 @@ float LM75B::temp()
 	return read_r16( Temp ) / 256.0;
 }
 
-void LM75B::thresholds( const float v0, const float v1 )
+void LM75B::thresholds( float v0, float v1 )
 {
 	float higher	= (v0 < v1) ? v1 : v0;
 	float lower		= (v0 < v1) ? v0 : v1;
@@ -47,17 +47,17 @@ void LM75B::thresholds( const float v0, const float v1 )
 	write_r16( Thyst, ((uint16_t)(lower  * 256.0)) & 0xFF80 );
 }
 
-void LM75B::os_mode( const mode flag )
+void LM75B::os_mode( mode flag )
 {
 	bit_op8( Conf, ~0x02, flag << 1 );
 }
 
 /* PCT2075 class ******************************************/
-PCT2075::PCT2075( const uint8_t i2c_address ) : LM75B( i2c_address )
+PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address )
 {
 }
 
-PCT2075::PCT2075( TwoWire& wire, const uint8_t i2c_address ) : LM75B( wire, i2c_address )
+PCT2075::PCT2075( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
 {
 }
 
@@ -67,11 +67,11 @@ PCT2075::~PCT2075()
 
 /* P3T1755 class ******************************************/
 
-P3T1755::P3T1755( const uint8_t i2c_address ) : LM75B( i2c_address )
+P3T1755::P3T1755( uint8_t i2c_address ) : LM75B( i2c_address )
 {
 }
 
-P3T1755::P3T1755( TwoWire& wire, const uint8_t i2c_address ) : LM75B( wire, i2c_address )
+P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
 {
 }
 
@@ -79,7 +79,7 @@ P3T1755::~P3T1755()
 {
 }
 
-void P3T1755::thresholds( const float v0, const float v1 )
+void P3T1755::thresholds( float v0, float v1 )
 {
 	float higher	= (v0 < v1) ? v1 : v0;
 	float lower		= (v0 < v1) ? v0 : v1;
@@ -90,11 +90,11 @@ void P3T1755::thresholds( const float v0, const float v1 )
 
 /* P3T1085 class ******************************************/
 
-P3T1085::P3T1085( const uint8_t i2c_address ) : P3T1755( i2c_address )
+P3T1085::P3T1085( uint8_t i2c_address ) : P3T1755( i2c_address )
 {
 }
 
-P3T1085::P3T1085( TwoWire& wire, const uint8_t i2c_address ) : P3T1755( wire, i2c_address )
+P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : P3T1755( wire, i2c_address )
 {
 }
 
@@ -102,7 +102,7 @@ P3T1085::~P3T1085()
 {
 }
 
-void P3T1085::os_mode( const mode flag )
+void P3T1085::os_mode( mode flag )
 {
 	bit_op16( Conf, ~0x0400, flag << 10 );
 }

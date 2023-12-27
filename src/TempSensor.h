@@ -33,8 +33,8 @@ public:
 	/*
 	 *	Methods to define class fundamental features, overridden by sub-classes
 	 */
-	TempSensor( const uint8_t i2c_address );
-	TempSensor( TwoWire& wire, const uint8_t i2c_address );
+	TempSensor( uint8_t i2c_address );
+	TempSensor( TwoWire& wire, uint8_t i2c_address );
 	virtual ~TempSensor();
 	virtual float temp( void )	= 0;
 	
@@ -71,14 +71,14 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	LM75B( const uint8_t i2c_address = (0x90 >> 1) );
+	LM75B( uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	LM75B( TwoWire& wire, const uint8_t i2c_address = (0x90 >> 1) );
+	LM75B( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */
@@ -98,13 +98,13 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	virtual void thresholds( const float v0, const float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	virtual void os_mode( const mode flag );
+	virtual void os_mode( mode flag );
 
 #if DOXYGEN_ONLY
 	/** Get temperature value in degree Celsius [°C] 
@@ -128,7 +128,7 @@ public:
 	 * @param size data size
 	 * @return transferred data size
 	 */
-	int reg_w( const uint8_t reg_adr, uint8_t *data, const uint16_t size );
+	int reg_w( uint8_t reg_adr, const uint8_t *data, uint16_t size );
 
 	/** Single register write
 	 * 
@@ -137,7 +137,7 @@ public:
 	 * @param size data size
 	 * @return transferred data size
 	 */
-	int reg_w( const uint8_t reg_adr, const uint8_t data );
+	int reg_w( uint8_t reg_adr, uint8_t data );
 
 	/** Multiple register read
 	 * 
@@ -146,21 +146,21 @@ public:
 	 * @param size data size
 	 * @return transferred data size
 	 */
-	int reg_r( const uint8_t reg_adr, uint8_t *data, const uint16_t size );
+	int reg_r( uint8_t reg_adr, uint8_t *data, uint16_t size );
 
 	/** Single register read
 	 * 
 	 * @param reg register index/address/pointer
 	 * @return read data
 	 */
-	uint8_t	reg_r( const uint8_t reg_adr );
+	uint8_t	reg_r( uint8_t reg_adr );
 
 	/** Register write, 8 bit
 	 *
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r8( const uint8_t reg, const uint8_t val );
+	void write_r8( uint8_t reg, uint8_t val );
 
 	/** Register write, 16 bit
 	 * 
@@ -169,14 +169,14 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r16( const uint8_t reg, const uint16_t val );
+	void write_r16( uint8_t reg, uint16_t val );
 
 	/** Register read, 8 bit
 	 *
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint8_t read_r8( const uint8_t reg );
+	uint8_t read_r8( uint8_t reg );
 
 	/** Register read, 16 bit
 	 *	
@@ -185,7 +185,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint16_t read_r16( const uint8_t reg );
+	uint16_t read_r16( uint8_t reg );
 
 	/** Register overwriting with bit-mask
 	 *	
@@ -195,8 +195,8 @@ public:
 	 * @param mask bit-mask to protect overwriting
 	 * @param value value to overwrite
 	 */
-	void bit_op8(  const uint8_t reg, const  uint8_t mask, const  uint8_t value );
-	void bit_op16( const uint8_t reg, const uint16_t mask, const uint16_t value );
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
 #endif	// DOXYGEN_ONLY
 };
 
@@ -225,14 +225,14 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	PCT2075( const uint8_t i2c_address = (0x90 >> 1) );
+	PCT2075( uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	PCT2075( TwoWire& wire, const uint8_t i2c_address = (0x90 >> 1) );
+	PCT2075( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
     /** Destructor of PCT2075
      */
@@ -261,13 +261,13 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	virtual void thresholds( const float v0, const float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Set OS operation mode 
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	virtual void os_mode( const mode flag );	
+	virtual void os_mode( mode flag );	
 
 	/** Ping the device
 	 *
@@ -279,7 +279,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r8( const uint8_t reg, const uint8_t val );
+	void write_r8( uint8_t reg, uint8_t val );
 
 	/** Register write, 16 bit
 	 * 
@@ -288,7 +288,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r16( const uint8_t reg, const uint16_t val );
+	void write_r16( uint8_t reg, uint16_t val );
 
 	/** Register read, 8 bit
 	 *
@@ -304,7 +304,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint16_t read_r16( const uint8_t reg );
+	uint16_t read_r16( uint8_t reg );
 
 	/** Register overwriting with bit-mask
 	 *	
@@ -314,8 +314,8 @@ public:
 	 * @param mask bit-mask to protect overwriting
 	 * @param value value to overwrite
 	 */
-	void bit_op8(  const uint8_t reg, const  uint8_t mask, const  uint8_t value );
-	void bit_op16( const uint8_t reg, const uint16_t mask, const uint16_t value );
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
 #endif	// DOXYGEN_ONLY
 };
 
@@ -343,14 +343,14 @@ public:
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	P3T1755( const uint8_t i2c_address = (0x98 >> 1) );
+	P3T1755( uint8_t i2c_address = (0x98 >> 1) );
 
 	/** Create a PCT2075 instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	P3T1755( TwoWire& wire, const uint8_t i2c_address = (0x90 >> 1) );
+	P3T1755( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */
@@ -364,7 +364,7 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	virtual void thresholds( const float v0, const float v1 ) override;
+	virtual void thresholds( float v0, float v1 ) override;
 
 #if DOXYGEN_ONLY
 	/** Get temperature value in degree Celsius [°C] 
@@ -385,7 +385,7 @@ public:
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	virtual void os_mode( const mode flag );	
+	virtual void os_mode( mode flag );	
 
 	/** Ping the device
 	 *
@@ -398,7 +398,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r8( const uint8_t reg, const uint8_t val );
+	void write_r8( uint8_t reg, uint8_t val );
 
 	/** Register write, 16 bit
 	 * 
@@ -407,14 +407,14 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r16( const uint8_t reg, const uint16_t val );
+	void write_r16( uint8_t reg, uint16_t val );
 
 	/** Register read, 8 bit
 	 *
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint8_t read_r8( const uint8_t reg );
+	uint8_t read_r8( uint8_t reg );
 
 	/** Register read, 16 bit
 	 *	
@@ -423,7 +423,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint16_t read_r16( const uint8_t reg );
+	uint16_t read_r16( uint8_t reg );
 
 	/** Register overwriting with bit-mask
 	 *	
@@ -433,8 +433,8 @@ public:
 	 * @param mask bit-mask to protect overwriting
 	 * @param value value to overwrite
 	 */
-	void bit_op8(  const uint8_t reg, const  uint8_t mask, const  uint8_t value );
-	void bit_op16( const uint8_t reg, const uint16_t mask, const uint16_t value );
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
 #endif	// DOXYGEN_ONLY
 };
 
@@ -461,7 +461,7 @@ public:
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
-	P3T1085( TwoWire& wire, const uint8_t i2c_address = (0x90 >> 1) );
+	P3T1085( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
 	/** Destructor of PCT2075
 	 */
@@ -471,7 +471,7 @@ public:
 	 *
 	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
 	 */	
-	virtual void os_mode( const mode flag ) override;
+	virtual void os_mode( mode flag ) override;
 
 	/** Clear ALERT (Clear interurpt)
 	 * 
@@ -502,7 +502,7 @@ public:
 	 * @param v0 a value in degree Celsius
 	 * @param v1 a value in degree Celsius
 	 */	
-	virtual void thresholds( const float v0, const float v1 );
+	virtual void thresholds( float v0, float v1 );
 
 	/** Ping the device
 	 *
@@ -517,7 +517,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @param val data value
 	 */
-	void write_r16( const uint8_t reg, const uint16_t val );
+	void write_r16( uint8_t reg, uint16_t val );
 
 	/** Register read, 16 bit
 	 *	
@@ -526,7 +526,7 @@ public:
 	 * @param reg register index/address/pointer
 	 * @return data value
 	 */
-	uint16_t read_r16( const uint8_t reg );
+	uint16_t read_r16( uint8_t reg );
 
 	/** Register overwriting with bit-mask
 	 *	
@@ -536,8 +536,8 @@ public:
 	 * @param mask bit-mask to protect overwriting
 	 * @param value value to overwrite
 	 */
-	void bit_op8(  const uint8_t reg, const  uint8_t mask, const  uint8_t value );
-	void bit_op16( const uint8_t reg, const uint16_t mask, const uint16_t value );
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
 #endif	// DOXYGEN_ONLY
 };
 
