@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['_7elm75b_0',['~LM75B',['../class_l_m75_b.html#a996025b690dde266bcf4ffc856465ee6',1,'LM75B']]],
-  ['_7ep3t1085_1',['~P3T1085',['../class_p3_t1085.html#a974496f4108ba81aef9ba3f11ba2f34d',1,'P3T1085']]],
-  ['_7ep3t1755_2',['~P3T1755',['../class_p3_t1755.html#ad75f6d388a181c90e5893bf3a325f291',1,'P3T1755']]],
-  ['_7epct2075_3',['~PCT2075',['../class_p_c_t2075.html#a5db78c5b6a4719d0537553f9c010e089',1,'PCT2075']]],
-  ['_7etempsensor_4',['~TempSensor',['../class_temp_sensor.html#a8527455e1393f2facd705ef0b1076349',1,'TempSensor']]]
+  ['p3t1085_0',['P3T1085',['../class_p3_t1085.html',1,'P3T1085'],['../class_p3_t1085.html#a33d79783460f965f42fd0bf553d62bd6',1,'P3T1085::P3T1085(uint8_t i2c_address=(0x90 &gt; &gt; 1))'],['../class_p3_t1085.html#a7cf4684d4c09f235bada560cd9a8fb2b',1,'P3T1085::P3T1085(TwoWire &amp;wire, const uint8_t i2c_address=(0x90 &gt; &gt; 1))']]],
+  ['p3t1085_2eh_1',['P3T1085.h',['../_p3_t1085_8h.html',1,'']]],
+  ['p3t1755_2',['P3T1755',['../class_p3_t1755.html',1,'P3T1755'],['../class_p3_t1755.html#a84e8ca85df9e2de91bfbe5d2349093a8',1,'P3T1755::P3T1755(const uint8_t i2c_address=(0x98 &gt; &gt; 1))'],['../class_p3_t1755.html#a06959a3db9a96d4a45dacdce446e5957',1,'P3T1755::P3T1755(TwoWire &amp;wire, const uint8_t i2c_address=(0x90 &gt; &gt; 1))']]],
+  ['p3t1755_2eh_3',['P3T1755.h',['../_p3_t1755_8h.html',1,'']]],
+  ['pct2075_4',['PCT2075',['../class_p_c_t2075.html',1,'PCT2075'],['../class_p_c_t2075.html#ad46f8b43b094c4d6d1c9633ae61b18b8',1,'PCT2075::PCT2075(const uint8_t i2c_address=(0x90 &gt; &gt; 1))'],['../class_p_c_t2075.html#aa2510720a7bdb716e231ed092e0d35bb',1,'PCT2075::PCT2075(TwoWire &amp;wire, const uint8_t i2c_address=(0x90 &gt; &gt; 1))']]],
+  ['pct2075_2eh_5',['PCT2075.h',['../_p_c_t2075_8h.html',1,'']]],
+  ['ping_6',['ping',['../class_l_m75_b.html#a1096ec88271034497031a5edfd97040c',1,'LM75B::ping()'],['../class_p_c_t2075.html#a6adcd04a4657cfe84c717a6fa018f8cb',1,'PCT2075::ping()'],['../class_p3_t1755.html#af5125999ea0bce1131513a3fca0dba8c',1,'P3T1755::ping()'],['../class_p3_t1085.html#a49b4989ed7278483d6ce3fa60a132c71',1,'P3T1085::ping()']]]
 ];

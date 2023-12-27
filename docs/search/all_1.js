@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['clear_0',['clear',['../class_p3_t1085.html#a4766741831482563fd4dd93b7499daff',1,'P3T1085']]],
-  ['comparator_1',['COMPARATOR',['../class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69ab4199759877d837f231fb22a03860279',1,'TempSensor']]],
-  ['conf_2',['Conf',['../class_l_m75_b.html#a290fdcfa4ca52be02034fda0f9c7060ca64546183925c84385dbdc0878da9a4f6',1,'LM75B::Conf'],['../class_p_c_t2075.html#ae7af2cfc062a68f47c2839d8b7577b5aa4bc885d226421c5edd024bc88439b90e',1,'PCT2075::Conf'],['../class_p3_t1755.html#ae8ddf5ef270998685a3b51231e5fcb07a87db9735a57e2e46d9bfeae70ec174ca',1,'P3T1755::Conf']]]
+  ['bit_5fop16_0',['bit_op16',['../class_l_m75_b.html#a7efb2eafee42f21976ee0489aa052ddf',1,'LM75B::bit_op16()'],['../class_p_c_t2075.html#a79730db701129ad6e690126b020c6047',1,'PCT2075::bit_op16()'],['../class_p3_t1755.html#afd0f4bf92d7dfd5de4ba57da2f5032af',1,'P3T1755::bit_op16()'],['../class_p3_t1085.html#a28d5c8af058f4771de3c2c5702fd6419',1,'P3T1085::bit_op16()']]],
+  ['bit_5fop8_1',['bit_op8',['../class_l_m75_b.html#a66f83f4231906604044fe60c050832b4',1,'LM75B::bit_op8()'],['../class_p_c_t2075.html#ae30aaa972a729b64bf837564ce36a9d0',1,'PCT2075::bit_op8()'],['../class_p3_t1755.html#a2714f1b16537c7fe3bf9b0cffc0a2e87',1,'P3T1755::bit_op8()'],['../class_p3_t1085.html#a0fdcd72173d1eafd4f188bae56cc4df5',1,'P3T1085::bit_op8()']]]
 ];

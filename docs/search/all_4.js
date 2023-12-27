@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['mode',['../class_temp_sensor.html#a04ed17a63cb73f086579970c6b7daa69',1,'TempSensor']]]
+  ['examples_0',['Examples',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]]
 ];
