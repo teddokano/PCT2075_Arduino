@@ -59,7 +59,7 @@ public:
 class LM75B : public TempSensor
 {
 public:
-	/** Name of the PCT2075 registers */
+	/** Name of the LM75B registers */
 	enum reg_num {
 		Temp,	/**< Temp register	*/
 		Conf,	/**< Conf register	*/
@@ -67,20 +67,20 @@ public:
 		Tos,	/**< Tos registe	*/
 	};
 
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a LM75B instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	LM75B( uint8_t i2c_address = (0x90 >> 1) );
 
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a LM75B instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	LM75B( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
-	/** Destructor of PCT2075
+	/** Destructor of LM75B
 	 */
 	virtual ~LM75B();
 	
@@ -102,7 +102,7 @@ public:
 
 	/** Set OS operation mode 
 	 *
-	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 * @param flag use LM75B::COMPARATOR or LM75B::INTERRUPT values
 	 */	
 	virtual void os_mode( mode flag );
 
@@ -331,7 +331,7 @@ public:
 class P3T1755 : public LM75B
 {
 public:
-	/** Name of the PCT2075 registers */
+	/** Name of the P3T1755 registers */
 	enum reg_num {
 		Temp,	/**< Temp register	*/
 		Conf,	/**< Conf register	*/
@@ -339,20 +339,20 @@ public:
 		T_HIGH,	/**< Tos registe	*/
 	};
 	
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a P3T1755 instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	P3T1755( uint8_t i2c_address = (0x98 >> 1) );
 
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a P3T1755 instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	P3T1755( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
-	/** Destructor of PCT2075
+	/** Destructor of P3T1755
 	 */
 	virtual ~P3T1755();
 
@@ -383,7 +383,7 @@ public:
 
 	/** Set OS operation mode 
 	 *
-	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 * @param flag use P3T1755::COMPARATOR or P3T1755::INTERRUPT values
 	 */	
 	virtual void os_mode( mode flag );	
 
@@ -450,26 +450,26 @@ public:
 class P3T1085 : public P3T1755
 {
 public:
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a P3T1085 instance connected to specified I2C pins with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	P3T1085( uint8_t i2c_address = (0x90 >> 1) );
 
-	/** Create a PCT2075 instance connected to specified I2C pins with specified address
+	/** Create a P3T1085 instance connected to specified I2C pins with specified address
 	 *
 	 * @param wire TwoWire instance
 	 * @param i2c_address I2C-bus address (default: (0x90>>1))
 	 */
 	P3T1085( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
 
-	/** Destructor of PCT2075
+	/** Destructor of P3T1085
 	 */
 	virtual ~P3T1085();
 
 	/** Set OS operation mode 
 	 *
-	 * @param flag use PCT2075::COMPARATOR or PCT2075::INTERRUPT values
+	 * @param flag use P3T1085::COMPARATOR or P3T1085::INTERRUPT values
 	 */	
 	virtual void os_mode( mode flag ) override;
 
@@ -518,6 +518,248 @@ public:
 	 * @param val data value
 	 */
 	void write_r16( uint8_t reg, uint16_t val );
+
+	/** Register read, 16 bit
+	 *	
+	 *	This 16 bit access may ot be common but it's useful for sensor devices
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint16_t read_r16( uint8_t reg );
+
+	/** Register overwriting with bit-mask
+	 *	
+	 *	Register can be updated by bit level
+	 *
+	 * @param reg register index/address/pointer
+	 * @param mask bit-mask to protect overwriting
+	 * @param value value to overwrite
+	 */
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
+#endif	// DOXYGEN_ONLY
+};
+
+
+/** P3T1035 class
+ *	
+ *  @class P3T1035
+
+ *  About P3T1035:
+ *    https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-5-c-accuracy-digital-temperature-sensor:P3T1035xUK
+ */
+
+class P3T1035 : public P3T1755
+{
+public:
+	/** Name of the P3T1755 registers */
+	enum reg_num {
+		Temp,	/**< Temp register	*/
+		Conf,	/**< Conf register	*/
+		T_LOW,	/**< Thyst register	*/
+		T_HIGH,	/**< Tos registe	*/
+	};
+	
+	/** Create a P3T1035 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1035( uint8_t i2c_address = (0x98 >> 1) );
+
+	/** Create a P3T1035 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T1035( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Destructor of P3T1035
+	 */
+	virtual ~P3T1035();
+	
+	/** Set OS operation mode 
+	 * 
+	 *	This is dummy method since P3T1035 doesn't have the thermostat mode
+	 *
+	 * @param flag use P3T1755::COMPARATOR or P3T1755::INTERRUPT values
+	 */	
+	virtual void os_mode( mode flag );	
+
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float temp( void );
+	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+
+	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
+	 *
+	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
+	 *	another will be the hysteresis (Thyst)
+	 *
+	 * @param v0 a value in degree Celsius
+	 * @param v1 a value in degree Celsius
+	 */	
+	virtual void thresholds( float v0, float v1 ) override;
+
+	/** Ping the device
+	 *
+	 * @return true when ACK 
+	 */
+	bool ping( void );
+
+	/** Register write, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r8( uint8_t reg, uint8_t val );
+
+	/** Register write, 16 bit
+	 * 
+	 *	This 16 bit access may ot be common but it's useful for sensor devices
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r16( uint8_t reg, uint16_t val );
+
+	/** Register read, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint8_t read_r8( uint8_t reg );
+
+	/** Register read, 16 bit
+	 *	
+	 *	This 16 bit access may ot be common but it's useful for sensor devices
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint16_t read_r16( uint8_t reg );
+
+	/** Register overwriting with bit-mask
+	 *	
+	 *	Register can be updated by bit level
+	 *
+	 * @param reg register index/address/pointer
+	 * @param mask bit-mask to protect overwriting
+	 * @param value value to overwrite
+	 */
+	void bit_op8(  uint8_t reg,  uint8_t mask,  uint8_t value );
+	void bit_op16( uint8_t reg, uint16_t mask, uint16_t value );
+#endif	// DOXYGEN_ONLY
+};
+
+
+/** P3T2030 class
+ *	
+ *  @class P3T2030
+
+ *  About P3T2030:
+ *    https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-2-0-c-accuracy-digital-temperature-sensor:P3T2030xUK
+ */
+
+class P3T2030 : public P3T1035
+{
+public:
+	/** Name of the P3T2030 registers */
+	enum reg_num {
+		Temp,	/**< Temp register	*/
+		Conf,	/**< Conf register	*/
+		T_LOW,	/**< Thyst register	*/
+		T_HIGH,	/**< Tos registe	*/
+	};
+	
+	/** Create a P3T2030 instance connected to specified I2C pins with specified address
+	 *
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T2030( uint8_t i2c_address = (0x98 >> 1) );
+
+	/** Create a P3T1035 instance connected to specified I2C pins with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0x90>>1))
+	 */
+	P3T2030( TwoWire& wire, uint8_t i2c_address = (0x90 >> 1) );
+
+	/** Destructor of P3T1035
+	 */
+	virtual ~P3T2030();
+	
+#if DOXYGEN_ONLY
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float temp( void );
+	
+	/** Get temperature value in degree Celsius [°C] 
+	 *
+	 *	This method simply calls "temp()" method	
+	 *
+	 * @return temperature value in degree Celsius [°C] 
+	 */
+	virtual float read( void );
+
+	/** Set Overtemperature shutdown threshold (Tos) and hysteresis (Thyst) in degree Celsius [°C] 
+	 *
+	 *	This method takes 2 values and higher value will set as the threshold (Tos) and 
+	 *	another will be the hysteresis (Thyst)
+	 *
+	 * @param v0 a value in degree Celsius
+	 * @param v1 a value in degree Celsius
+	 */	
+	virtual void thresholds( float v0, float v1 ) override;
+
+	/** Set OS operation mode 
+	 * 
+	 *	This is dummy method since P3T2030 doesn't have the thermostat mode
+	 *
+	 * @param flag use P3T2030::COMPARATOR or P3T1755::INTERRUPT values
+	 */	
+	virtual void os_mode( mode flag );	
+
+	/** Ping the device
+	 *
+	 * @return true when ACK 
+	 */
+	bool ping( void );
+
+	/** Register write, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r8( uint8_t reg, uint8_t val );
+
+	/** Register write, 16 bit
+	 * 
+	 *	This 16 bit access may ot be common but it's useful for sensor devices
+	 *
+	 * @param reg register index/address/pointer
+	 * @param val data value
+	 */
+	void write_r16( uint8_t reg, uint16_t val );
+
+	/** Register read, 8 bit
+	 *
+	 * @param reg register index/address/pointer
+	 * @return data value
+	 */
+	uint8_t read_r8( uint8_t reg );
 
 	/** Register read, 16 bit
 	 *	

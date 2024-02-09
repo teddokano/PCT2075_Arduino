@@ -2,17 +2,9 @@
 
 /* TempSensor class ******************************************/
 
-TempSensor::TempSensor( uint8_t i2c_address ) : I2C_device( i2c_address )
-{
-}
-
-TempSensor::TempSensor( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address )
-{
-}
-
-TempSensor::~TempSensor()
-{
-}
+TempSensor::TempSensor( uint8_t i2c_address ) : I2C_device( i2c_address ){}
+TempSensor::TempSensor( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address ){}
+TempSensor::~TempSensor(){}
 
 float TempSensor::read()
 {
@@ -21,17 +13,9 @@ float TempSensor::read()
 
 /* LM75B class ******************************************/
 
-LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address )
-{
-}
-
-LM75B::LM75B( TwoWire& wire, uint8_t i2c_address ) : TempSensor( wire, i2c_address )
-{
-}
-
-LM75B::~LM75B()
-{
-}
+LM75B::LM75B( uint8_t i2c_address ) : TempSensor( i2c_address ){}
+LM75B::LM75B( TwoWire& wire, uint8_t i2c_address ) : TempSensor( wire, i2c_address ){}
+LM75B::~LM75B(){}
 
 float LM75B::temp()
 {
@@ -53,31 +37,15 @@ void LM75B::os_mode( mode flag )
 }
 
 /* PCT2075 class ******************************************/
-PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address )
-{
-}
-
-PCT2075::PCT2075( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
-{
-}
-
-PCT2075::~PCT2075()
-{
-}
+PCT2075::PCT2075( uint8_t i2c_address ) : LM75B( i2c_address ){}
+PCT2075::PCT2075( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+PCT2075::~PCT2075(){}
 
 /* P3T1755 class ******************************************/
 
-P3T1755::P3T1755( uint8_t i2c_address ) : LM75B( i2c_address )
-{
-}
-
-P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address )
-{
-}
-
-P3T1755::~P3T1755()
-{
-}
+P3T1755::P3T1755( uint8_t i2c_address ) : LM75B( i2c_address ){}
+P3T1755::P3T1755( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+P3T1755::~P3T1755(){}
 
 void P3T1755::thresholds( float v0, float v1 )
 {
@@ -90,18 +58,9 @@ void P3T1755::thresholds( float v0, float v1 )
 
 /* P3T1085 class ******************************************/
 
-P3T1085::P3T1085( uint8_t i2c_address ) : P3T1755( i2c_address )
-{
-}
-
-P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : P3T1755( wire, i2c_address )
-{
-}
-
-P3T1085::~P3T1085()
-{
-}
-
+P3T1085::P3T1085( uint8_t i2c_address ) : P3T1755( i2c_address ){}
+P3T1085::P3T1085( TwoWire& wire, uint8_t i2c_address ) : P3T1755( wire, i2c_address ){}
+P3T1085::~P3T1085(){}
 void P3T1085::os_mode( mode flag )
 {
 	bit_op16( Conf, ~0x0400, flag << 10 );
@@ -111,3 +70,20 @@ bool P3T1085::clear( void )
 {
 	return (read_r16( Conf ) & 0x1000) ? true : false;
 }
+
+/* P3T1035 class ******************************************/
+
+P3T1035::P3T1035( uint8_t i2c_address ) : LM75B( i2c_address ){}
+P3T1035::P3T1035( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+P3T1035::~P3T1035(){}
+
+void P3T1035::os_mode( mode flag )
+{
+	//	Do nothing since this device doesn't have "Thermostat Mode"
+}
+
+/* P3T2030 class ******************************************/
+
+P3T2030::P3T2030( uint8_t i2c_address ) : LM75B( i2c_address ){}
+P3T2030::P3T2030( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+P3T2030::~P3T2030(){}
