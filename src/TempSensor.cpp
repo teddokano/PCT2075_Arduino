@@ -73,17 +73,20 @@ bool P3T1085::clear( void )
 
 /* P3T1035 class ******************************************/
 
-P3T1035::P3T1035( uint8_t i2c_address ) : LM75B( i2c_address ){}
-P3T1035::P3T1035( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+P3T1035::P3T1035( uint8_t i2c_address ) : P3T1755( i2c_address ){}
+P3T1035::P3T1035( TwoWire& wire, uint8_t i2c_address ) : P3T1755( wire, i2c_address ){}
 P3T1035::~P3T1035(){}
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 void P3T1035::os_mode( mode flag )
 {
 	//	Do nothing since this device doesn't have "Thermostat Mode"
 }
+#pragma GCC diagnostic pop
 
 /* P3T2030 class ******************************************/
 
-P3T2030::P3T2030( uint8_t i2c_address ) : LM75B( i2c_address ){}
-P3T2030::P3T2030( TwoWire& wire, uint8_t i2c_address ) : LM75B( wire, i2c_address ){}
+P3T2030::P3T2030( uint8_t i2c_address ) : P3T1035( i2c_address ){}
+P3T2030::P3T2030( TwoWire& wire, uint8_t i2c_address ) : P3T1035( wire, i2c_address ){}
 P3T2030::~P3T2030(){}

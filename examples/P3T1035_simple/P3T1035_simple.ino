@@ -1,6 +1,6 @@
 /** P3T1035 temperature sensor operation sample
  *  
- *  This sample code is showing P3T1755 temperature sensor operation.
+ *  This sample code is showing P3T1035 temperature sensor operation.
  *
  *  @author  Tedd OKANO
  *
@@ -12,7 +12,7 @@
 
 #include <P3T1035.h>
 
-P3T1035 sensor;
+P3T1035 sensor( 0xE4 >> 1 );
 
 void setup() {
   Serial.begin(9600);

@@ -40,9 +40,12 @@ void loop() {
 Type#|Header file|Features|Accuracy|Resolution|Interface|Evaluation board
 ---|---|---|---|---|---|---
 [LM75B](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/digital-temperature-sensor-and-thermal-watchdog:LM75B)											|`LM75B.h`		|An industrial standard Digital Temperature Sensor				|±2℃		|0.125℃ (11bit)	|I²C Fast-mode (400KHz)			|---
-[PCT2075](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075)	|`PCT2075.h`	|I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor	|±1℃		|0.125℃ (11bit)	|I²C Fast-mode Plus (1MHz)		|[PCT2075DP-ARD Arduino® Shield - Temperature Sensors](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD)
+[P3T1035](https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-5-c-accuracy-digital-temperature-sensor:P3T1035xUK)									|`P3T1035.h`	|I3C/I2C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1035xUK Arduino® Shield Evaluation Board](https://www.nxp.com/design/design-center/development-boards/analog-toolbox/arduino-shields-solutions/p3t1035xuk-arduino-shield-evaluation-board:P3T1035XUK-ARD)
+[P3T1084](https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-4-c-accurate-digital-temperature-sensor:P3T1084UK)									|`P3T1085.h` **Use P3T1085 class library**	|I3C/I²C-Bus ±0.4 °C Accurate Digital Temperature Sensor		|±0.4℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|
 [P3T1085](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1085UK)								|`P3T1085.h`	|I3C/I²C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1085UK Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1085uk-arduino-shield-evaluation-board:P3T1085UK-ARD)
 [P3T1755](https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-0-5-c-accurate-digital-temperature-sensor:P3T1755DP)									|`P3T1755.h`	|I3C/I2C-Bus ±0.5 °C Accurate Digital Temperature Sensor		|±0.5℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T1755DP Arduino® Shield Evaluation Board](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/p3t1755dp-arduino-shield-evaluation-board:P3T1755DP-ARD)
+[P3T2030](https://www.nxp.com/products/sensors/i3c-ic-digital-temp-sensors/i3c-ic-bus-2-0-c-accuracy-digital-temperature-sensor:P3T2030xUK)									|`P3T2030.h`	|I3C/I2C-Bus ±2.0 °C Accurate Digital Temperature Sensor		|±2.0℃	|0.0625℃ (12bit)	|I3C / I²C Fast-mode (400KHz)	|[P3T2030xUK Arduino® Shield Evaluation Board](https://www.nxp.com/design/design-center/development-boards/analog-toolbox/arduino-shields-solutions/p3t2030xuk-arduino-shield-evaluation-board:P3T2030XUK-ARD)
+[PCT2075](https://www.nxp.com/products/sensors/ic-digital-temperature-sensors/ic-bus-fm-plus-1-degree-c-accuracy-digital-temperature-sensor-and-thermal-watchdog:PCT2075)	|`PCT2075.h`	|I²C-Bus Fm+, 1 Degree C Accuracy, Digital Temperature Sensor	|±1℃		|0.125℃ (11bit)	|I²C Fast-mode Plus (1MHz)		|[PCT2075DP-ARD Arduino® Shield - Temperature Sensors](https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pct2075dp-ard-arduino-shield-temperature-sensors:PCT2075DP-ARD)
 
 # Getting started
 ## Install and run
@@ -133,13 +136,15 @@ For a quick access to those sketch, **refer to last step** of **"Getting started
 Sketch|Feature
 ---|---
 LM75B_simple							|Simple sample for just reading temperature fro LM75B in every second
-PCT2075_simple							|Simple sample for just reading temperature fro PCT2075 in every second
-PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thresholds +2℃ and +1℃ of temperature when starting. The sketch controls **on-board heater** to keep the temperature withon those thresholds.
+P3T1035_simple							|Simple sample for just reading temperature fro P3T1035 in every second (Similar to `PCT2075_simple`)
 P3T1085_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
 P3T1085_interrupt						|Demo for interrupt behavior. On the **P3T1085UK-ARD evaluation board**, the D8 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D8 and D2 pins**. 
 P3T1085_simple_on_Arduino_Due			|Same as "P3T1085_simple" code but it can run on Arduino Due. This code is to show how the different TwoWire instance can be targeted
 P3T1755_simple							|Simple sample for just reading temperature fro P3T1085 in every second (Similar to `PCT2075_simple`)
 P3T1755_interrupt						|Demo for interrupt behavior. On the **P3T1755DP-ARD evaluation board**, the D9 pin is used for interrupt output but it cannot be used on most of Arduino boards. The D2 pin is used for interrupt input on this sketch. So to perform the interrupt correctly, **short D9 and D2 pins**. 
+P3T2030_simple							|Simple sample for just reading temperature fro P3T2030 in every second (Similar to `PCT2075_simple`)
+PCT2075_simple							|Simple sample for just reading temperature fro PCT2075 in every second
+PCT2075DP-ARD_interrupt_by_Tos_Thyst	|Demo to use interrupt. The sketch sets thresholds +2℃ and +1℃ of temperature when starting. The sketch controls **on-board heater** to keep the temperature withon those thresholds.
 
 # Document
 For details of the library, please find descriptions in [this document](https://teddokano.github.io/TempSensor_NXP_Arduino/annotated.html).
